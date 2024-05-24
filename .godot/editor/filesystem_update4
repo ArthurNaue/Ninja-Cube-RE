@@ -1,12 +1,4 @@
-res://scenes/game/entities/player/sword/root/sword.tscn
-res://assets/game/shaders/hit.tres
 res://scenes/game/root/game.tscn
-res://scripts/game/hud/healthUI/root/healthUI.gd
-res://scripts/game/components/health/root/healthComponent.gd
-res://scripts/game/components/health/healthBar/root/healthBarComponent.gd
+res://assets/game/shaders/hit.tres
 res://scenes/game/entities/enemies/normal/enemy/root/enemy.tscn
-res://scripts/game/root/game.gd
-res://scripts/game/entities/enemies/normal/enemy/root/enemy.gd
 res://scenes/game/entities/player/root/player.tscn
-res://scripts/game/components/navAgent/root/navAgentComponent.gd
-res://scripts/game/entities/player/root/player.gd
