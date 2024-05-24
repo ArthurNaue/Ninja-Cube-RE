@@ -1,0 +1,15 @@
+AnimationPlayer
+RichTextLabel
+CanvasLayer
+TileMap
+NavAgentComponent
+NavigationAgent2D
+NavigationRegion2D
+Timer
+HitboxComponent
+HealthBarComponent
+HealthComponent
+CollisionPolygon2D
+CollisionShape2D
+Sprite2D
+GPUParticles2D

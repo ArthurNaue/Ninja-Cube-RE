@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://dx8edxoy5l1i0"]
+
+[node name="killEffect" type="CPUParticles2D"]
+scale = Vector2(0.2, 0.2)
+emitting = false
+amount = 50
+lifetime = 0.2
+one_shot = true
+explosiveness = 1.0
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 1000.0
+initial_velocity_max = 1000.0
+scale_amount_min = 5.0
+scale_amount_max = 5.0
+color = Color(0.0196078, 0.105882, 0.172549, 1)

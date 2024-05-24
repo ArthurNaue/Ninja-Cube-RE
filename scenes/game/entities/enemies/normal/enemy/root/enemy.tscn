@@ -1,0 +1,168 @@
+[gd_scene load_steps=18 format=3 uid="uid://bosohlwx6dyu3"]
+
+[ext_resource type="Shader" uid="uid://sphuqyo4dg12" path="res://assets/game/shaders/hit.tres" id="1_juea4"]
+[ext_resource type="Script" path="res://scripts/game/entities/enemies/normal/enemy/root/enemy.gd" id="1_y0xin"]
+[ext_resource type="Resource" uid="uid://ce1266m8s2krb" path="res://assets/game/resources/entitiesStats/enemyStats/root/enemyStats.tres" id="2_57syo"]
+[ext_resource type="Script" path="res://scripts/game/components/hitbox/root/hitboxComponent.gd" id="2_kxwno"]
+[ext_resource type="Texture2D" uid="uid://brbscmu36gsos" path="res://assets/game/images/entities/enemies/normal/enemy/enemy.png" id="3_2ffie"]
+[ext_resource type="Script" path="res://scripts/game/components/health/root/healthComponent.gd" id="6_h0mu0"]
+[ext_resource type="Script" path="res://scripts/game/components/health/healthBar/root/healthBarComponent.gd" id="7_mjep7"]
+[ext_resource type="Script" path="res://scripts/game/components/navAgent/root/navAgentComponent.gd" id="8_3rtwc"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_jj71y"]
+resource_local_to_scene = true
+shader = ExtResource("1_juea4")
+shader_parameter/enabled = false
+shader_parameter/tint = Color(0.019608, 0.105882, 0.172549, 1)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cwo7l"]
+size = Vector2(16, 20)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_61a8s"]
+bg_color = Color(0.0196078, 0.105882, 0.172549, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4ler3"]
+bg_color = Color(0.545098, 0.784314, 0.996078, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.0196078, 0.105882, 0.172549, 1)
+
+[sub_resource type="Animation" id="Animation_3ehs0"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("sprite:material:shader_parameter/enabled")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("sprite:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_exq26"]
+resource_name = "hit"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("sprite:material:shader_parameter/enabled")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_ejlg4"]
+resource_name = "areaExited"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("sprite:material:shader_parameter/enabled")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_unt87"]
+resource_name = "hit"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("sprite:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(0.6, 1.4), Vector2(1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_2qu7h"]
+_data = {
+"RESET": SubResource("Animation_3ehs0"),
+"areaEntered": SubResource("Animation_exq26"),
+"areaExited": SubResource("Animation_ejlg4"),
+"hit": SubResource("Animation_unt87")
+}
+
+[node name="enemy" type="CharacterBody2D" groups=["enemies"]]
+collision_layer = 4
+collision_mask = 6
+motion_mode = 1
+wall_min_slide_angle = 0.0
+script = ExtResource("1_y0xin")
+stats = ExtResource("2_57syo")
+
+[node name="sprite" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_jj71y")
+position = Vector2(1, 0)
+texture = ExtResource("3_2ffie")
+
+[node name="hitbox" type="Area2D" parent="." node_paths=PackedStringArray("health", "hitAnim")]
+collision_layer = 4
+script = ExtResource("2_kxwno")
+health = NodePath("../health")
+hitAnim = NodePath("../hitAnim")
+
+[node name="col" type="CollisionShape2D" parent="hitbox"]
+position = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_cwo7l")
+
+[node name="health" type="Node2D" parent="." node_paths=PackedStringArray("healthBar")]
+script = ExtResource("6_h0mu0")
+healthBar = NodePath("../healthBar")
+
+[node name="healthBar" type="ProgressBar" parent="."]
+visible = false
+offset_left = -9.0
+offset_top = 13.0
+offset_right = 11.0
+offset_bottom = 17.0
+theme_override_styles/background = SubResource("StyleBoxFlat_61a8s")
+theme_override_styles/fill = SubResource("StyleBoxFlat_4ler3")
+max_value = 2.0
+value = 1.0
+show_percentage = false
+script = ExtResource("7_mjep7")
+
+[node name="hitAnim" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_2qu7h")
+}
+
+[node name="col" type="CollisionShape2D" parent="."]
+position = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_cwo7l")
+
+[node name="navAgentComponent" type="NavigationAgent2D" parent="."]
+script = ExtResource("8_3rtwc")
+
+[connection signal="area_entered" from="hitbox" to="." method="_on_hitbox_area_entered"]
+[connection signal="healthUpdated" from="health" to="healthBar" method="_on_health_health_updated"]

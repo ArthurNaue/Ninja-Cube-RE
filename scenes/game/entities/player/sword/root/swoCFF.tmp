@@ -1,0 +1,81 @@
+[gd_scene load_steps=6 format=3 uid="uid://b3exsrvf730c2"]
+
+[ext_resource type="Script" path="res://scripts/game/entities/player/sword/root/sword.gd" id="1_fq8c6"]
+[ext_resource type="Texture2D" uid="uid://rcjhdf2y01fj" path="res://assets/game/images/entities/player/sword/sword.png" id="1_g2446"]
+
+[sub_resource type="Animation" id="Animation_g5t13"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../sprite:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../sprite:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_j8l3g"]
+resource_name = "swordAttack"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0, -30), Vector2(30, 0), Vector2(0, 30)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [-1.5708, 0.0, 3.14159]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_xeb4o"]
+_data = {
+"RESET": SubResource("Animation_g5t13"),
+"attack": SubResource("Animation_j8l3g")
+}
+
+[node name="sword" type="Node2D"]
+script = ExtResource("1_fq8c6")
+
+[node name="sprite" type="Sprite2D" parent="."]
+position = Vector2(0, -29)
+rotation = -1.5708
+texture = ExtResource("1_g2446")
+offset = Vector2(0, -6)
+
+[node name="attackAnim" type="AnimationPlayer" parent="."]
+root_node = NodePath("")
+libraries = {
+"": SubResource("AnimationLibrary_xeb4o")
+}
+autoplay = "idle"

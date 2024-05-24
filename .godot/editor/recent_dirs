@@ -1,0 +1,12 @@
+res://scripts/game/hud/healthUI/root
+res://assets/game/resources/entitiesStats/enemyStats/root
+res://
+res://scripts/game/entities/player/camera/root
+res://scripts/game/entities/player/sword/root
+res://scripts/game/entities/player/sword/direction
+res://scripts/game/entities/enemies/root
+res://scripts/game/root
+res://scripts/game/entities/enemies/normal/enemy/root
+res://assets/game/shaders
+res://scenes/game/entities
+res://scenes

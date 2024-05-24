@@ -1,0 +1,62 @@
+[gd_scene load_steps=9 format=3 uid="uid://28umbtrxx3b7"]
+
+[ext_resource type="Script" path="res://scripts/game/entities/player/root/player.gd" id="1_2xwvb"]
+[ext_resource type="Texture2D" uid="uid://bqwdhaot5hyu3" path="res://assets/game/images/entities/player/root/player.png" id="2_rkyij"]
+[ext_resource type="Script" path="res://scripts/game/components/hitboxComponent.gd" id="3_uof3c"]
+[ext_resource type="Script" path="res://scripts/game/entities/player/camera/root/camera.gd" id="4_x5fl4"]
+[ext_resource type="PackedScene" uid="uid://b3exsrvf730c2" path="res://scenes/game/entities/player/sword/root/sword.tscn" id="4_yn2vk"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_4lrg7"]
+load_path = "res://.godot/imported/arrow.png-7471a1cce6a30d036645d0e29872f945.ctex"
+
+[sub_resource type="GDScript" id="GDScript_0x611"]
+script/source = "extends Sprite2D
+class_name ArrowSprite
+
+func _process(_delta: float) -> void:
+	#muda a rotacao para olhar pro mouse
+	look_at(get_global_mouse_position())
+"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gi6pw"]
+size = Vector2(18, 22)
+
+[node name="player" type="CharacterBody2D" groups=["player"]]
+z_index = 1
+position = Vector2(541, 366)
+collision_mask = 2
+script = ExtResource("1_2xwvb")
+
+[node name="sprite" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(1, 0)
+texture = ExtResource("2_rkyij")
+offset = Vector2(-1, 0)
+
+[node name="arrowSprite" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(1, 1)
+texture = SubResource("CompressedTexture2D_4lrg7")
+offset = Vector2(34, 0)
+script = SubResource("GDScript_0x611")
+
+[node name="hitboxComponent" type="Area2D" parent="."]
+collision_mask = 2
+script = ExtResource("3_uof3c")
+
+[node name="col" type="CollisionShape2D" parent="hitboxComponent"]
+position = Vector2(0, 1)
+shape = SubResource("RectangleShape2D_gi6pw")
+
+[node name="camera" type="Camera2D" parent="."]
+zoom = Vector2(2, 2)
+position_smoothing_enabled = true
+position_smoothing_speed = 2.0
+script = ExtResource("4_x5fl4")
+
+[node name="col" type="CollisionShape2D" parent="."]
+position = Vector2(0, 1)
+shape = SubResource("RectangleShape2D_gi6pw")
+
+[node name="sword" parent="." instance=ExtResource("4_yn2vk")]
+position = Vector2(0, 2)
