@@ -1,4 +1,4 @@
-res://scripts/game/hud/healthUI/root
+res://scenes/game/entities/player/hud/pointsUI/root
 res://assets/game/resources/entitiesStats/enemyStats/root
 res://
 res://scripts/game/entities/player/camera/root

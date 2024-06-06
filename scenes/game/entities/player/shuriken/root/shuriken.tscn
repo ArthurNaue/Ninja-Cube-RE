@@ -1,7 +1,7 @@
 [gd_scene load_steps=10 format=3 uid="uid://bj77v4tfok35s"]
 
 [ext_resource type="Script" path="res://scripts/game/entities/player/shuriken/root/shuriken.gd" id="1_jv1l5"]
-[ext_resource type="Texture2D" uid="uid://bq6gq3d78ewfd" path="res://assets/game/images/entities/player/shuriken/root/shuriken.png" id="2_06qyu"]
+[ext_resource type="Texture2D" uid="uid://cvpg2oyptxqk7" path="res://assets/game/images/entities/player/shuriken/root/shuriken.png" id="2_06qyu"]
 [ext_resource type="Script" path="res://scripts/game/components/hitbox/root/hitboxComponent.gd" id="3_sb2ik"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_1yh72"]

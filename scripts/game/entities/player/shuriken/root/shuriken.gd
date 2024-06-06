@@ -65,8 +65,9 @@ func change_position(desiredPosition: Vector2) -> void:
 func tp_shoot(area: Area2D) -> void:
 	#troca a posicao do player com a bala
 	change_position(area.parent.global_position)
-	#destroi o objeto colidido
-	area.parent.queue_free()
+	for damage in 2:
+		#destroi o objeto colidido
+		area.damage()
 	#desativa a camera lenta
 	game.gamePace = 1
 
@@ -95,7 +96,7 @@ func _draw() -> void:
 	#define os parametros do circulo
 	var cen = Vector2.ZERO
 	var rad = 40
-	var col = Color(5, 27, 44, 1)
+	var col = Color(214, 212, 203, 1)
 	var angle_from = 0
 	var angle_to = 359
 	#desenha o circulo

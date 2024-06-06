@@ -1,8 +1,6 @@
 extends Node2D
 class_name Game
 
-signal playerDamaged(health: int)
-
 #constantes
 const player = preload("res://scenes/game/entities/player/root/player.tscn")
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://28umbtrxx3b7"]
+[gd_scene load_steps=19 format=3 uid="uid://28umbtrxx3b7"]
 
 [ext_resource type="Script" path="res://scripts/game/entities/player/root/player.gd" id="1_2xwvb"]
 [ext_resource type="Resource" uid="uid://b2q2u3lcy8o4n" path="res://assets/game/resources/entitiesStats/playerStats/root/playerStats.tres" id="2_88t2j"]
@@ -7,6 +7,8 @@
 [ext_resource type="Script" path="res://scripts/game/entities/player/camera/root/camera.gd" id="4_x5fl4"]
 [ext_resource type="PackedScene" uid="uid://b3exsrvf730c2" path="res://scenes/game/entities/player/sword/root/sword.tscn" id="4_yn2vk"]
 [ext_resource type="Script" path="res://scripts/game/components/health/root/healthComponent.gd" id="7_elxqe"]
+[ext_resource type="Script" path="res://scenes/game/entities/player/hud/healthUI/root/healthUI.gd" id="8_afvuq"]
+[ext_resource type="Script" path="res://scenes/game/entities/player/hud/pointsUI/root/pointsUI.gd" id="9_m7dhm"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_4lrg7"]
 load_path = "res://.godot/imported/arrow.png-7471a1cce6a30d036645d0e29872f945.ctex"
@@ -22,6 +24,116 @@ func _process(_delta: float) -> void:
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gi6pw"]
 size = Vector2(16, 20)
+
+[sub_resource type="Animation" id="Animation_cu8i0"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1.5, 1.5)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0.839216, 0.831373, 0.796078, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_4uejm"]
+resource_name = "updateHealth"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(1.5, 1.5), Vector2(2, 2), Vector2(1.5, 1.5)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0.0627451, 0.0745098, 0.137255, 1), Color(0.839216, 0.831373, 0.796078, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_rseof"]
+_data = {
+"RESET": SubResource("Animation_cu8i0"),
+"updateHealth": SubResource("Animation_4uejm")
+}
+
+[sub_resource type="Animation" id="Animation_bq883"]
+resource_name = "updateHealth"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(1.5, 1.5), Vector2(2, 2), Vector2(1.5, 1.5)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0.0627451, 0.0745098, 0.137255, 1), Color(0.839216, 0.831373, 0.796078, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_ndp8y"]
+length = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0.839216, 0.831373, 0.796078, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_86bpe"]
+_data = {
+"RESET": SubResource("Animation_ndp8y"),
+"updatePoints": SubResource("Animation_bq883")
+}
 
 [node name="player" type="CharacterBody2D" groups=["player"]]
 z_index = 1
@@ -66,4 +178,36 @@ shape = SubResource("RectangleShape2D_gi6pw")
 [node name="sword" parent="." instance=ExtResource("4_yn2vk")]
 position = Vector2(0, 2)
 
+[node name="hud" type="CanvasLayer" parent="."]
+
+[node name="healthUI" type="RichTextLabel" parent="hud"]
+modulate = Color(0.839216, 0.831373, 0.796078, 1)
+offset_right = 40.0
+offset_bottom = 24.0
+scale = Vector2(1.5, 1.5)
+bbcode_enabled = true
+text = "[center]a"
+script = ExtResource("8_afvuq")
+
+[node name="healthUpdateAnim" type="AnimationPlayer" parent="hud/healthUI"]
+libraries = {
+"": SubResource("AnimationLibrary_rseof")
+}
+
+[node name="pointsUI" type="RichTextLabel" parent="hud"]
+modulate = Color(0.839216, 0.831373, 0.796078, 1)
+offset_left = 540.0
+offset_right = 580.0
+offset_bottom = 24.0
+scale = Vector2(1.5, 1.5)
+bbcode_enabled = true
+text = "[center]a"
+script = ExtResource("9_m7dhm")
+
+[node name="pointsUpdateAnim" type="AnimationPlayer" parent="hud/pointsUI"]
+libraries = {
+"": SubResource("AnimationLibrary_86bpe")
+}
+
+[connection signal="pointsUpdated" from="." to="hud/pointsUI" method="_on_player_points_updated"]
 [connection signal="healthUpdated" from="health" to="." method="_on_health_health_updated"]

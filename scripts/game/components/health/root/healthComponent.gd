@@ -11,6 +11,7 @@ signal healthUpdated(health: int)
 @onready var maxHealth = parent.stats.maxHealth
 @onready var health = maxHealth
 @onready var game = get_tree().get_first_node_in_group("game")
+@onready var player = get_tree().get_first_node_in_group("player")
 
 func _ready() -> void:
 	if healthBar != null:
@@ -22,6 +23,9 @@ func damage() -> void:
 	health -= 1
 	#mata a entidade se a vida chegar a zero
 	if health <= 0:
+		if parent.is_in_group("enemies"):
+			player.points += 1
+			player.pointsUpdated.emit(player.points)
 		parent.queue_free()
 	#manda o sinal de atualizar a vida
 	healthUpdated.emit(health)

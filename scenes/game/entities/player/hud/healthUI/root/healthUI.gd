@@ -6,11 +6,11 @@ class_name HealthUI
 
 func _ready() -> void:
 	#muda o texto para a vida maxima do player
-	text = str(3)
+	text = "[center]" + str(3)
 
 #funcao que executa quando o player toma dano
-func _on_game_player_damaged(health) -> void:
+func player_damaged(health) -> void:
 	#atualiza o texto pra vida do jogador
-	text = str(health)
+	text = "[center]" + str(health)
 	#toca a animacao de atualizar a vida
 	healthUpdateAnim.play("updateHealth")

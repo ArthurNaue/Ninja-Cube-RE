@@ -66,8 +66,8 @@ func _on_hitbox_area_entered(_area) -> void:
 		#da dano ao inimigo
 		_area.damage()
 	else:
-		#destroi o inimigo
-		_area.parent.queue_free()
+		for damage in 2:
+			_area.damage()
 	#verifica se a area e um inimigo
 	if _area.parent.is_in_group("enemies"):
 		#aplica o efeito de dano na area

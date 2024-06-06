@@ -1,6 +1,8 @@
 extends CharacterBody2D
 class_name Player
 
+signal pointsUpdated(points)
+
 #constantes
 const shurikenScene = preload("res://scenes/game/entities/player/shuriken/root/shuriken.tscn")
 
@@ -13,10 +15,12 @@ const shurikenScene = preload("res://scenes/game/entities/player/shuriken/root/s
 @onready var canShoot = true
 @onready var game = get_tree().get_first_node_in_group("game")
 @onready var col = $hitbox/col
+@onready var healthUI = $hud/healthUI
 
 #variaveis
 var moveVector: Vector2
 var attacking: bool
+var points: int
 
 func _physics_process(_delta) -> void:
 	if attacking == false:
@@ -65,4 +69,4 @@ func shoot() -> void:
 	get_parent().add_child(shuriken)
 
 func _on_health_health_updated(health):
-	game.playerDamaged.emit(health)
+	healthUI.player_damaged(health)
