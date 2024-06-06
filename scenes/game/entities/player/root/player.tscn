@@ -7,8 +7,8 @@
 [ext_resource type="Script" path="res://scripts/game/entities/player/camera/root/camera.gd" id="4_x5fl4"]
 [ext_resource type="PackedScene" uid="uid://b3exsrvf730c2" path="res://scenes/game/entities/player/sword/root/sword.tscn" id="4_yn2vk"]
 [ext_resource type="Script" path="res://scripts/game/components/health/root/healthComponent.gd" id="7_elxqe"]
-[ext_resource type="Script" path="res://scenes/game/entities/player/hud/healthUI/root/healthUI.gd" id="8_afvuq"]
-[ext_resource type="Script" path="res://scenes/game/entities/player/hud/pointsUI/root/pointsUI.gd" id="9_m7dhm"]
+[ext_resource type="Script" path="res://scripts/game/entities/player/hud/healthUI/root/healthUI.gd" id="8_iye6o"]
+[ext_resource type="Script" path="res://scripts/game/entities/player/hud/pointsUI/root/pointsUI.gd" id="9_3wkno"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_4lrg7"]
 load_path = "res://.godot/imported/arrow.png-7471a1cce6a30d036645d0e29872f945.ctex"
@@ -187,7 +187,7 @@ offset_bottom = 24.0
 scale = Vector2(1.5, 1.5)
 bbcode_enabled = true
 text = "[center]a"
-script = ExtResource("8_afvuq")
+script = ExtResource("8_iye6o")
 
 [node name="healthUpdateAnim" type="AnimationPlayer" parent="hud/healthUI"]
 libraries = {
@@ -202,7 +202,7 @@ offset_bottom = 24.0
 scale = Vector2(1.5, 1.5)
 bbcode_enabled = true
 text = "[center]a"
-script = ExtResource("9_m7dhm")
+script = ExtResource("9_3wkno")
 
 [node name="pointsUpdateAnim" type="AnimationPlayer" parent="hud/pointsUI"]
 libraries = {

@@ -10,3 +10,5 @@ res://scenes/game/entities/player/hud/healthUI/root/healthUI.gd
 res://scenes/game/entities/player/hud/pointsUI/root/pointsUI.gd
 res://scripts/game/components/health/root/healthComponent.gd
 res://scripts/game/entities/player/sword/root/sword.gd
+res://scenes/game/entities/player/hud/pointsEffect/root/pointsEffect.tscn
+res://scripts/game/entities/player/hud/pointsEffect/root/pointsEffect.gd

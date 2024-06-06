@@ -1,6 +1,7 @@
 extends CharacterBody2D
 class_name Player
 
+#sinais
 signal pointsUpdated(points)
 
 #constantes
@@ -61,8 +62,11 @@ func shoot() -> void:
 	canShoot = false
 	#cria o objeto do tiro
 	var shuriken = shurikenScene.instantiate() as CharacterBody2D
+	#ajusta a posicao do objeto do tiro
 	shuriken.global_position = global_position
+	#ajusta a direcao do objeto do tiro
 	shuriken.direction = get_global_mouse_position() - global_position
+	#ajusta o lado que o objeto do tiro esta direcionado
 	if get_global_mouse_position().x > global_position.x:
 		shuriken.facingRight = true
 	#spawna o objeto do tiro
