@@ -34,14 +34,18 @@ func _process(_delta: float) -> void:
 				attacking = true
 				#verifica se o poder de ataque esta maior que 1500
 				if attackPower >= 1500:
+					attackAnim.play("chargedAttack")
 					#habilita o ataque do player
 					player.attacking = true
 					#define a direcao do ataque
 					var direction = get_global_mouse_position() - player.global_position
 					#aplica a direcao no jogador
 					player.velocity = direction.normalized() * attackPower
-				#toca a animacao de ataque
-				attackAnim.play("attack")
+					player.get_node("sprite").visible = false
+					await get_tree().create_timer(0.2).timeout
+					player.get_node("sprite").visible = true
+				else:
+					attackAnim.play("unchargedAttack")
 
 #funcao de mudar a direcao para o mouse
 func apply_direction() -> void:

@@ -1,8 +1,9 @@
+Sprite2D
+AnimatedSprite2D
+CollisionShape2D
 AnimationPlayer
 Timer
 RichTextLabel
-Sprite2D
-AnimatedSprite2D
 CanvasLayer
 TileMap
 NavAgentComponent
@@ -11,4 +12,3 @@ NavigationRegion2D
 HitboxComponent
 HealthBarComponent
 HealthComponent
-CollisionPolygon2D

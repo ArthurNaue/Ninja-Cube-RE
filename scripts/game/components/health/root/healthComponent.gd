@@ -18,8 +18,11 @@ const pointsEffectScene = preload("res://scenes/game/entities/player/hud/pointsE
 @onready var player = get_tree().get_first_node_in_group("player")
 
 func _ready() -> void:
+	#verifica se a barra de vida ta vazia
 	if healthBar != null:
+		#ajusta a vida da barra de vida pro valor maximo da vida
 		healthBar.max_value = maxHealth
+		#ajusta o valor da barra de vida pro valor da vida
 		healthBar.value = maxHealth
 
 func damage() -> void:

@@ -13,6 +13,7 @@ config_version=5
 config/name="Holder"
 run/main_scene="res://scenes/game/root/game.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
+config/icon="res://assets/game/images/entities/player/root/player.png"
 
 [autoload]
 
