@@ -1,67 +1,95 @@
-[gd_scene load_steps=9 format=3 uid="uid://b3exsrvf730c2"]
+[gd_scene load_steps=26 format=3 uid="uid://b3exsrvf730c2"]
 
 [ext_resource type="Script" path="res://scripts/game/entities/player/sword/root/sword.gd" id="1_fq8c6"]
-[ext_resource type="Texture2D" uid="uid://rcjhdf2y01fj" path="res://assets/game/images/entities/player/sword/root/sword.png" id="2_s3s2n"]
+[ext_resource type="Texture2D" uid="uid://bivx05y4ij1la" path="res://assets/game/images/entities/player/sword/charge/swordCharge1.png" id="2_5s2s6"]
+[ext_resource type="Texture2D" uid="uid://c0fnb3oarm0di" path="res://assets/game/images/entities/player/sword/root/sword.png" id="2_s3s2n"]
 [ext_resource type="Script" path="res://scripts/game/components/hitbox/root/hitboxComponent.gd" id="3_ge17k"]
 [ext_resource type="Texture2D" uid="uid://ccjkwtdf5igqw" path="res://assets/game/images/entities/player/sword/effect/swordEffect.png" id="3_no7ps"]
+[ext_resource type="Texture2D" uid="uid://bio0hgv71mvxx" path="res://assets/game/images/entities/player/sword/charge/swordCharge2.png" id="3_txxnp"]
+[ext_resource type="Texture2D" uid="uid://v4mw3addixq1" path="res://assets/game/images/entities/player/sword/charge/swordCharge3.png" id="4_w5mg4"]
+[ext_resource type="Texture2D" uid="uid://583ysy0iki8o" path="res://assets/game/images/entities/player/sword/charge/swordCharge4.png" id="5_1svvu"]
+[ext_resource type="Texture2D" uid="uid://c288sdlgjf85j" path="res://assets/game/images/entities/player/sword/charge/swordCharge5.png" id="6_d0ry5"]
+[ext_resource type="Texture2D" uid="uid://cdj0bfjh750sd" path="res://assets/game/images/entities/player/sword/charge/swordCharge6.png" id="7_71a87"]
+[ext_resource type="Texture2D" uid="uid://41kl3nfqxxp5" path="res://assets/game/images/entities/player/sword/charge/swordCharge7.png" id="8_l5de2"]
+[ext_resource type="Texture2D" uid="uid://jx3t27j6ou62" path="res://assets/game/images/entities/player/sword/charge/swordCharge8.png" id="9_xty30"]
+[ext_resource type="Texture2D" uid="uid://dkv3sahjg688h" path="res://assets/game/images/entities/player/sword/charge/swordCharge9.png" id="10_kkxjt"]
+[ext_resource type="Texture2D" uid="uid://bwotfhqic6nou" path="res://assets/game/images/entities/player/sword/charge/swordCharge10.png" id="11_p10sb"]
+[ext_resource type="Texture2D" uid="uid://ciqtml5cp5hmw" path="res://assets/game/images/entities/player/sword/charge/swordCharge11.png" id="12_pbsjh"]
+[ext_resource type="Texture2D" uid="uid://b2blxteuph2vn" path="res://assets/game/images/entities/player/sword/charge/swordCharge12.png" id="13_iiooe"]
+[ext_resource type="Texture2D" uid="uid://cl3nyx5ceqyrb" path="res://assets/game/images/entities/player/sword/charge/swordCharge13.png" id="14_ubcbh"]
+[ext_resource type="Texture2D" uid="uid://dl8gyxtyjwtky" path="res://assets/game/images/entities/player/sword/charge/swordCharge14.png" id="15_pew3u"]
+[ext_resource type="Texture2D" uid="uid://gsnmbb60ijn0" path="res://assets/game/images/entities/player/sword/charge/swordCharge15.png" id="16_ut7qy"]
+[ext_resource type="Texture2D" uid="uid://sgaavo5kacvw" path="res://assets/game/images/entities/player/sword/charge/swordCharge16.png" id="17_w2jo7"]
 
 [sub_resource type="Animation" id="Animation_lgndl"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("sprite:position")
+tracks/0/path = NodePath("effect:visible")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(0, -30)]
+"update": 1,
+"values": [false]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("sprite:visible")
+tracks/1/path = NodePath("hitbox/col:disabled")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [true]
+"values": [false]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("sprite:rotation")
+tracks/2/path = NodePath("sprite:texture")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [-1.5708]
+"update": 1,
+"values": [ExtResource("2_s3s2n")]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("effect:visible")
+tracks/3/path = NodePath("sprite:position")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
+"update": 0,
+"values": [Vector2(-20, -15)]
 }
 tracks/4/type = "value"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("hitbox/col:disabled")
+tracks/4/path = NodePath("sprite:rotation")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [-1.5708]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("sprite:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
@@ -74,99 +102,129 @@ length = 0.2
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("sprite:position")
+tracks/0/path = NodePath("effect:visible")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [Vector2(-10, -15), Vector2(30, 0), Vector2(-10, 15)]
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("sprite:visible")
+tracks/1/path = NodePath("hitbox/col:disabled")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.2),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [true, false]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("sprite:rotation")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [-1.5708, 0.785398, 1.5708]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("effect:visible")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0, 0.2),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [true, false]
-}
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("hitbox/col:disabled")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
 "times": PackedFloat32Array(0, 0.2),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [false, true]
 }
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("sprite:texture")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("2_s3s2n")]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("sprite:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(-20, -15), Vector2(20, 0), Vector2(-20, 15)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("sprite:rotation")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [-1.5708, 0.785398, 4.53786]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("sprite:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0.2),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
 
-[sub_resource type="Animation" id="Animation_5hrdq"]
-resource_name = "start"
-length = 0.1
+[sub_resource type="Animation" id="Animation_4uqqo"]
+resource_name = "charge"
+length = 1.5
+loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("sprite:visible")
+tracks/0/path = NodePath("sprite:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.1, 1.2, 1.3, 1.4, 1.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("2_5s2s6"), ExtResource("3_txxnp"), ExtResource("4_w5mg4"), ExtResource("5_1svvu"), ExtResource("6_d0ry5"), ExtResource("7_71a87"), ExtResource("8_l5de2"), ExtResource("9_xty30"), ExtResource("10_kkxjt"), ExtResource("11_p10sb"), ExtResource("12_pbsjh"), ExtResource("13_iiooe"), ExtResource("14_ubcbh"), ExtResource("15_pew3u"), ExtResource("16_ut7qy"), ExtResource("17_w2jo7")]
+}
+
+[sub_resource type="Animation" id="Animation_noum6"]
+resource_name = "charge1"
+length = 0.1
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("sprite:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
+"update": 0,
+"values": [Vector2(-20, -15)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("effect:visible")
+tracks/1/path = NodePath("sprite:rotation")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
+"update": 0,
+"values": [-1.5708]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("hitbox/col:disabled")
+tracks/2/path = NodePath("sprite:visible")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0.1),
+"times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [true]
@@ -176,7 +234,8 @@ tracks/2/keys = {
 _data = {
 "RESET": SubResource("Animation_lgndl"),
 "attack": SubResource("Animation_0nttd"),
-"start": SubResource("Animation_5hrdq")
+"charge1": SubResource("Animation_noum6"),
+"charge2": SubResource("Animation_4uqqo")
 }
 
 [node name="sword" type="Node2D"]
@@ -184,7 +243,8 @@ position = Vector2(0, 30)
 script = ExtResource("1_fq8c6")
 
 [node name="sprite" type="Sprite2D" parent="."]
-position = Vector2(0, -30)
+visible = false
+position = Vector2(-20, -15)
 rotation = -1.5708
 texture = ExtResource("2_s3s2n")
 

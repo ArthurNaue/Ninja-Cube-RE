@@ -1,3 +1,5 @@
+Sprite2D
+AnimatedSprite2D
 AnimationPlayer
 RichTextLabel
 CanvasLayer
@@ -10,6 +12,3 @@ HitboxComponent
 HealthBarComponent
 HealthComponent
 CollisionPolygon2D
-CollisionShape2D
-Sprite2D
-GPUParticles2D

@@ -12,31 +12,36 @@ const shurikenScene = preload("res://scenes/game/entities/player/shuriken/root/s
 @onready var arrowSprite = $arrowSprite
 @onready var canShoot = true
 @onready var game = get_tree().get_first_node_in_group("game")
+@onready var col = $hitbox/col
 
 #variaveis
 var moveVector: Vector2
+var attacking: bool
 
 func _physics_process(_delta) -> void:
-	#adiciona a direcao do player ao input
-	moveVector.x = Input.get_action_strength("D") - Input.get_action_strength("A")
-	moveVector.y = Input.get_action_strength("S") - Input.get_action_strength("W")
-	#estabiliza os numeros do Vector2
-	moveVector = moveVector.normalized()
-	
-	if get_global_mouse_position().x < global_position.x:
-		sprite.flip_h = true
+	if attacking == false:
+		col.disabled = false
+		#adiciona a direcao do player ao input
+		moveVector.x = Input.get_action_strength("D") - Input.get_action_strength("A")
+		moveVector.y = Input.get_action_strength("S") - Input.get_action_strength("W")
+		#estabiliza os numeros do Vector2
+		moveVector = moveVector.normalized()
+		
+		if get_global_mouse_position().x < global_position.x:
+			sprite.flip_h = true
+		else:
+			sprite.flip_h = false
+		
+		#verifica se tem alguma direcao para ir
+		if moveVector:
+			#altera a velocidade do player baseado na direcao 
+			velocity = moveVector * (stats.moveSpeed * game.gamePace)
+		else:
+			velocity = Vector2.ZERO
 	else:
-		sprite.flip_h = false
+		col.disabled = true
 	
-	#verifica se tem alguma direcao para ir
-	if moveVector:
-		#altera a velocidade do player baseado na direcao 
-		velocity = moveVector * (stats.moveSpeed * game.gamePace)
-	else:
-		#zera a velocidade
-		velocity = Vector2.ZERO
-	
-	#verifica se o player clicou com o mouse esquerdo
+	#verifica se o player clicou com o mouse direito
 	if Input.is_action_just_pressed("m2"):
 		#verifica se pode atirar
 		if canShoot == true:
