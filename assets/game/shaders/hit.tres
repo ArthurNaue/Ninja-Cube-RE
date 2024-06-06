@@ -3,7 +3,7 @@
 [sub_resource type="VisualShaderNodeColorParameter" id="VisualShaderNodeColorParameter_v43gr"]
 parameter_name = "tint"
 default_value_enabled = true
-default_value = Color(0.0196078, 0.105882, 0.172549, 1)
+default_value = Color(0.0627451, 0.0745098, 0.137255, 1)
 
 [sub_resource type="VisualShaderNodeBooleanParameter" id="VisualShaderNodeBooleanParameter_n67du"]
 parameter_name = "enabled"
@@ -20,7 +20,7 @@ code = "shader_type canvas_item;
 render_mode blend_mix;
 
 uniform bool enabled = false;
-uniform vec4 tint : source_color = vec4(0.019608, 0.105882, 0.172549, 1.000000);
+uniform vec4 tint : source_color = vec4(0.062745, 0.074510, 0.137255, 1.000000);
 
 
 
@@ -61,6 +61,7 @@ void fragment() {
 
 }
 "
+graph_offset = Vector2(-173.774, 189.403)
 mode = 1
 flags/light_only = false
 nodes/fragment/0/position = Vector2(700, 240)

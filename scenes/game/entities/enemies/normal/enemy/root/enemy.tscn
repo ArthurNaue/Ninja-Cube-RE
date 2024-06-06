@@ -4,7 +4,7 @@
 [ext_resource type="Script" path="res://scripts/game/entities/enemies/normal/enemy/root/enemy.gd" id="1_y0xin"]
 [ext_resource type="Resource" uid="uid://ce1266m8s2krb" path="res://assets/game/resources/entitiesStats/enemyStats/root/enemyStats.tres" id="2_57syo"]
 [ext_resource type="Script" path="res://scripts/game/components/hitbox/root/hitboxComponent.gd" id="2_kxwno"]
-[ext_resource type="Texture2D" uid="uid://brbscmu36gsos" path="res://assets/game/images/entities/enemies/normal/enemy/enemy.png" id="3_2ffie"]
+[ext_resource type="Texture2D" uid="uid://thphum0qspsn" path="res://assets/game/images/entities/enemies/normal/enemy/enemy.png" id="3_2ffie"]
 [ext_resource type="Script" path="res://scripts/game/components/health/root/healthComponent.gd" id="6_h0mu0"]
 [ext_resource type="Script" path="res://scripts/game/components/health/healthBar/root/healthBarComponent.gd" id="7_mjep7"]
 [ext_resource type="Script" path="res://scripts/game/components/navAgent/root/navAgentComponent.gd" id="8_3rtwc"]
@@ -19,10 +19,10 @@ shader_parameter/tint = Color(0.019608, 0.105882, 0.172549, 1)
 size = Vector2(16, 20)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_61a8s"]
-bg_color = Color(0.0196078, 0.105882, 0.172549, 1)
+bg_color = Color(0.0627451, 0.0745098, 0.137255, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4ler3"]
-bg_color = Color(0.545098, 0.784314, 0.996078, 1)
+bg_color = Color(0.443137, 0.0980392, 0.0980392, 1)
 border_width_left = 1
 border_width_top = 1
 border_width_right = 1
