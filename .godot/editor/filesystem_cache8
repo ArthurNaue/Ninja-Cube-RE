@@ -1,5 +1,5 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1717955538
+::res://::1717992524
 ::res://assets/::1716054070
 ::res://assets/game/::1716263611
 ::res://assets/game/images/::1716092642
@@ -33,8 +33,8 @@ swordCharge14.png::CompressedTexture2D::7050457227776825383::1717634625::1717634
 swordCharge15.png::CompressedTexture2D::3587165350721456212::1717634625::1717634625::1::::<><>::
 swordCharge16.png::CompressedTexture2D::3289988832779017576::1717634625::1717634625::1::::<><>::
 ::res://assets/game/images/entities/player/sword/effect/::1717706259
-::res://assets/game/images/entities/player/sword/effect/charged/::1717706259
-chargedSwordEffect.png::CompressedTexture2D::4849373246363265602::1717706246::1717706259::1::::<><>::
+::res://assets/game/images/entities/player/sword/effect/charged/::1717992524
+chargedSwordEffect.png::CompressedTexture2D::2113397367445999233::1717992510::1717992524::1::::<><>::
 ::res://assets/game/images/entities/player/sword/effect/uncharged/::1717706265
 unchargedSwordEffect.png::CompressedTexture2D::1706584607364812833::1717705495::1717706265::1::::<><>::
 ::res://assets/game/images/entities/player/sword/root/::1717634532
@@ -50,8 +50,8 @@ enemyStats.tres::Resource/Resource::5108966930245635971::1716263778::0::1::::<><
 ::res://assets/game/resources/entitiesStats/playerStats/::1716263679
 ::res://assets/game/resources/entitiesStats/playerStats/root/::1716263713
 playerStats.tres::Resource/Resource::4316226068438634023::1716263713::0::1::::<><>::res://scripts/game/resources/entitiesStats/root/entitieStats.gd
-::res://assets/game/shaders/::1717732219
-hit.tres::VisualShader::1294826464746826447::1717732219::0::1::::<><>::
+::res://assets/game/shaders/::1717955659
+hit.tres::VisualShader::1294826464746826447::1717955659::0::1::::<><>::
 ::res://scenes/::1717684524
 ::res://scenes/game/::1716053726
 ::res://scenes/game/entities/::1716054048
@@ -73,11 +73,11 @@ player.tscn::PackedScene::1964459096171743418::1717707202::0::1::::<><>::res://s
 ::res://scenes/game/entities/player/shuriken/::1716080306
 ::res://scenes/game/entities/player/shuriken/root/::1717707202
 shuriken.tscn::PackedScene::3086162362780585358::1717707202::0::1::::<><>::res://scripts/game/entities/player/shuriken/root/shuriken.gd<>uid://cvpg2oyptxqk7::::res://assets/game/images/entities/player/shuriken/root/shuriken.png<>res://scripts/game/components/hitbox/root/hitboxComponent.gd
-::res://scenes/game/entities/player/sword/::1716157108
-::res://scenes/game/entities/player/sword/root/::1717732244
-sword.tscn::PackedScene::4361395377307078275::1717732244::0::1::::<><>::res://scripts/game/entities/player/sword/root/sword.gd<>uid://cjjfi6nh081jb::::res://assets/game/images/entities/player/sword/charge/swordCharge1.png<>uid://dils72k7o66uv::::res://assets/game/images/entities/player/sword/root/sword.png<>res://scripts/game/components/hitbox/root/hitboxComponent.gd<>uid://ykxg1hk4nwxd::::res://assets/game/images/entities/player/sword/effect/uncharged/unchargedSwordEffect.png<>uid://cr006d1ujk7yy::::res://assets/game/images/entities/player/sword/charge/swordCharge2.png<>uid://bjoqrvpxx0irb::::res://assets/game/images/entities/player/sword/charge/swordCharge3.png<>uid://bpir2fo1jx2r7::::res://assets/game/images/entities/player/sword/charge/swordCharge4.png<>uid://40dyuk8dbjp3::::res://assets/game/images/entities/player/sword/charge/swordCharge5.png<>uid://c8cycu22kdo0k::::res://assets/game/images/entities/player/sword/charge/swordCharge6.png<>uid://cdwc1h3gmtn86::::res://assets/game/images/entities/player/sword/charge/swordCharge7.png<>uid://re77iuap8suv::::res://assets/game/images/entities/player/sword/charge/swordCharge8.png<>uid://cl5qhkvciwj0p::::res://assets/game/images/entities/player/sword/charge/swordCharge9.png<>uid://d4e23u6w6b5jk::::res://assets/game/images/entities/player/sword/charge/swordCharge10.png<>uid://bqt41acch4v2b::::res://assets/game/images/entities/player/sword/charge/swordCharge11.png<>uid://vui1hw8xbkcv::::res://assets/game/images/entities/player/sword/charge/swordCharge12.png<>uid://cepny5hawrr7::::res://assets/game/images/entities/player/sword/charge/swordCharge13.png<>uid://c7pkaar7osa1d::::res://assets/game/images/entities/player/sword/charge/swordCharge14.png<>uid://brdwdbfj5q8ia::::res://assets/game/images/entities/player/sword/charge/swordCharge15.png<>uid://bm4xvur4hm2ns::::res://assets/game/images/entities/player/sword/charge/swordCharge16.png<>uid://cbdcp7ajt6lnu::::res://assets/game/images/entities/player/sword/effect/charged/chargedSwordEffect.png
-::res://scenes/game/root/::1717732244
-game.tscn::PackedScene::6638004272532823284::1717732244::0::1::::<><>::res://scripts/game/root/game.gd<>uid://vc7vo7sk120v::::res://assets/game/images/tilemap/tilemap.png
+::res://scenes/game/entities/player/sword/::1717992524
+::res://scenes/game/entities/player/sword/root/::1717992516
+sword.tscn::PackedScene::4361395377307078275::1717955759::0::1::::<><>::res://scripts/game/entities/player/sword/root/sword.gd<>uid://cjjfi6nh081jb::::res://assets/game/images/entities/player/sword/charge/swordCharge1.png<>uid://dils72k7o66uv::::res://assets/game/images/entities/player/sword/root/sword.png<>res://scripts/game/components/hitbox/root/hitboxComponent.gd<>uid://ykxg1hk4nwxd::::res://assets/game/images/entities/player/sword/effect/uncharged/unchargedSwordEffect.png<>uid://cr006d1ujk7yy::::res://assets/game/images/entities/player/sword/charge/swordCharge2.png<>uid://bjoqrvpxx0irb::::res://assets/game/images/entities/player/sword/charge/swordCharge3.png<>uid://bpir2fo1jx2r7::::res://assets/game/images/entities/player/sword/charge/swordCharge4.png<>uid://40dyuk8dbjp3::::res://assets/game/images/entities/player/sword/charge/swordCharge5.png<>uid://c8cycu22kdo0k::::res://assets/game/images/entities/player/sword/charge/swordCharge6.png<>uid://cdwc1h3gmtn86::::res://assets/game/images/entities/player/sword/charge/swordCharge7.png<>uid://re77iuap8suv::::res://assets/game/images/entities/player/sword/charge/swordCharge8.png<>uid://cl5qhkvciwj0p::::res://assets/game/images/entities/player/sword/charge/swordCharge9.png<>uid://d4e23u6w6b5jk::::res://assets/game/images/entities/player/sword/charge/swordCharge10.png<>uid://bqt41acch4v2b::::res://assets/game/images/entities/player/sword/charge/swordCharge11.png<>uid://vui1hw8xbkcv::::res://assets/game/images/entities/player/sword/charge/swordCharge12.png<>uid://cepny5hawrr7::::res://assets/game/images/entities/player/sword/charge/swordCharge13.png<>uid://c7pkaar7osa1d::::res://assets/game/images/entities/player/sword/charge/swordCharge14.png<>uid://brdwdbfj5q8ia::::res://assets/game/images/entities/player/sword/charge/swordCharge15.png<>uid://bm4xvur4hm2ns::::res://assets/game/images/entities/player/sword/charge/swordCharge16.png<>uid://cbdcp7ajt6lnu::::res://assets/game/images/entities/player/sword/effect/charged/chargedSwordEffect.png
+::res://scenes/game/root/::1717955696
+game.tscn::PackedScene::6638004272532823284::1717955696::0::1::::<><>::res://scripts/game/root/game.gd<>uid://vc7vo7sk120v::::res://assets/game/images/tilemap/tilemap.png
 ::res://scripts/::1716053384
 ::res://scripts/game/::1717685015
 ::res://scripts/game/components/::1716523641

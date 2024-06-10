@@ -20,7 +20,7 @@
 [ext_resource type="Texture2D" uid="uid://c7pkaar7osa1d" path="res://assets/game/images/entities/player/sword/charge/swordCharge14.png" id="15_pew3u"]
 [ext_resource type="Texture2D" uid="uid://brdwdbfj5q8ia" path="res://assets/game/images/entities/player/sword/charge/swordCharge15.png" id="16_ut7qy"]
 [ext_resource type="Texture2D" uid="uid://bm4xvur4hm2ns" path="res://assets/game/images/entities/player/sword/charge/swordCharge16.png" id="17_w2jo7"]
-[ext_resource type="Texture2D" uid="uid://cbdcp7ajt6lnu" path="res://assets/game/images/entities/player/sword/effect/charged/chargedSwordEffect.png" id="20_215cq"]
+[ext_resource type="Texture2D" uid="uid://5d0l03dmc5cv" path="res://assets/game/images/entities/player/sword/effect/charged/chargedSwordEffect.png" id="20_215cq"]
 
 [sub_resource type="Animation" id="Animation_lgndl"]
 length = 0.001
@@ -144,6 +144,18 @@ tracks/9/keys = {
 "update": 0,
 "values": [Vector2(1, 1)]
 }
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("chargedSwordEffect:frame")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
 
 [sub_resource type="Animation" id="Animation_noum6"]
 resource_name = "charge1"
@@ -218,6 +230,7 @@ tracks/0/keys = {
 [sub_resource type="Animation" id="Animation_r7v4o"]
 resource_name = "unchargedAttack"
 length = 0.2
+step = 0.01
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -300,7 +313,19 @@ tracks/6/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(1, 1)]
+"values": [Vector2(1, 4.5)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("chargedSwordEffect:frame")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0, 0.01, 0.02, 0.03, 0.04, 0.05, 0.06, 0.07, 0.08, 0.09, 0.1, 0.11),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 10]
 }
 
 [sub_resource type="Animation" id="Animation_dmfon"]
@@ -432,6 +457,7 @@ texture = ExtResource("3_ndekn")
 [node name="chargedSwordEffect" type="Sprite2D" parent="."]
 visible = false
 texture = ExtResource("20_215cq")
+hframes = 11
 
 [node name="attackAnim" type="AnimationPlayer" parent="."]
 libraries = {

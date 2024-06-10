@@ -1,3 +1,7 @@
 res://scenes/game/entities/player/sword/root/sword.tscn
 res://assets/game/shaders/hit.tres
 res://scenes/game/root/game.tscn
+res://scenes/game/entities/player/root/player.tscn
+res://scripts/game/components/health/root/healthComponent.gd
+res://scenes/game/entities/player/hud/pointsEffect/root/pointsEffect.tscn
+res://scripts/game/entities/player/hud/pointsEffect/root/pointsEffect.gd

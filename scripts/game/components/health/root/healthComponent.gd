@@ -34,7 +34,8 @@ func damage() -> void:
 		if parent.is_in_group("enemies"):
 			#spawna o efeito de pontos
 			spawn_points_effect(parent.global_position, 1)
-		parent.queue_free()
+		else:
+			parent.queue_free()
 	#manda o sinal de atualizar a vida
 	healthUpdated.emit(health)
 
@@ -51,3 +52,4 @@ func spawn_points_effect(location: Vector2, points: int) -> void:
 	pointsEffect.adjust_points(points)
 	#adiciona o objeto no jogo
 	game.add_child(pointsEffect)
+	parent.queue_free()
