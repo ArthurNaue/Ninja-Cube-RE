@@ -38,7 +38,7 @@ func damage() -> void:
 		if parent.is_in_group("enemies"):
 			#spawna o efeito de pontos
 			spawn_points_effect(parent.global_position, 1)
-			var shouldSpawnPowerup = randi_range(1,20)
+			var shouldSpawnPowerup = randi_range(1, 20)
 			if shouldSpawnPowerup == 1:
 				GameManager.spawnPowerup(parent.global_position)
 		else:

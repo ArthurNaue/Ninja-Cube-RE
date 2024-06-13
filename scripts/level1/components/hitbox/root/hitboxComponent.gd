@@ -24,4 +24,4 @@ func heal() -> void:
 
 func shield() -> void:
 	var shieldEffect = shieldScene.instantiate() as StaticBody2D
-	parent.add_child(shieldEffect)
+	parent.call_deferred("add_child", shieldEffect)

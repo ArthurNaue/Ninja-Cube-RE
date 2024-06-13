@@ -26,15 +26,15 @@ func _ready() -> void:
 		"shield":
 			powerupSprite.texture = shieldSprite
 
-func _on_enable_timer_timeout():
+func _on_enable_timer_timeout() -> void:
 	#habilita a colisao
 	col.disabled = false
 
-func _on_hitbox_area_entered(_area: Area2D):
+func _on_hitbox_area_entered(_area: Area2D) -> void:
 	#verifica se a area colidida e um player
 	if _area.parent.is_in_group("player"):
 		#desativa a colisao
-		col.disabled = true
+		col.set_deferred("disabled", true)
 		#desativa a visibilidade do powerup
 		visible = false
 		#toca o som de pegar o powerup
@@ -49,6 +49,6 @@ func _on_hitbox_area_entered(_area: Area2D):
 				_area.shield()
 
 #funcao que executa quando o som de pickup acaba
-func _on_pickup_sound_finished():
+func _on_pickup_sound_finished() -> void:
 	#deleta o objeto do powerup
 	queue_free()

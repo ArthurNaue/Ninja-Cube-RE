@@ -14,5 +14,5 @@ func spawnEntitie(entitieScene: PackedScene, location: Vector2) -> void:
 
 func spawnPowerup(location: Vector2) -> void:
 	var powerup = powerupScene.instantiate() as StaticBody2D
-	add_child(powerup)
+	call_deferred("add_child", powerup)
 	powerup.global_position = location

@@ -7,3 +7,5 @@ res://scenes/level1/powerups/root/powerup.tscn
 res://scripts/gameManager/powerup/root/powerup.gd
 res://scenes/level1/entities/enemies/normal/enemy/root/enemy.tscn
 res://scripts/level1/components/health/root/healthComponent.gd
+res://scripts/gameManager/root/gameManager.gd
+res://scripts/level1/components/hitbox/root/hitboxComponent.gd
