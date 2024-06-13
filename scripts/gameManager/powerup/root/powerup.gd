@@ -9,17 +9,20 @@ const shieldSprite = preload("res://assets/images/gameManager/powerup/shield/roo
 @onready var powerupSprite = $powerupSprite
 @onready var pickupSound = $pickupSound
 @onready var col = $hitbox/col
-@onready var playerHitbox = get_tree().get_first_node_in_group("player").get_node("hitbox")
+@onready var player = get_tree().get_first_node_in_group("player")
+@onready var playerHealth = player.get_node("health")
+@onready var playerHitbox = player.get_node("hitbox")
 
 #variaveis
 var powerups = [
 	"health",
 	"shield"
 ]
-var chosenPowerup: String
+var powerup: String
 
 func _ready() -> void:
-	set_powerup()
+	#define o powerup
+	powerup = set_powerup()
 
 func _on_enable_timer_timeout() -> void:
 	#habilita a colisao
@@ -29,7 +32,7 @@ func _on_hitbox_area_entered(_area: Area2D) -> void:
 	#verifica se a area colidida e um player
 	if _area.parent.is_in_group("player"):
 		#executa a funcao de pegar o powerup
-		powerup_picked(chosenPowerup)
+		powerup_picked()
 
 #funcao que executa quando o som de pickup acaba
 func _on_pickup_sound_finished() -> void:
@@ -46,22 +49,30 @@ func disable_powerup() -> void:
 	pickupSound.play()
 
 #funcao de curar
-func powerup_picked(_powerup: String) -> void:
-	match _powerup:
+func powerup_picked() -> void:
+	match powerup:
 		"health":
-			#cura
-			playerHitbox.heal()
+			#verifica se o player esta com a vida maxima
+			if playerHealth.health < playerHealth.maxHealth:
+				#cura
+				playerHitbox.heal()
+				#desabilita o powerup
+				disable_powerup()
 		"shield":
-			#ativa o shield
-			playerHitbox.shield()
-	#desabilita o powerup
-	disable_powerup()
+			#verifica se o player esta com o escudo ativo
+			if !player.shielded:
+				#ativa o shield
+				playerHitbox.shield()
+				#desabilita o powerup
+				disable_powerup()
 
-func set_powerup():
+func set_powerup() -> String:
 	#define qual vai ser o powerup
-	chosenPowerup = powerups.pick_random()
+	var chosenPowerup = powerups.pick_random()
 	match chosenPowerup:
 		"health":
 			powerupSprite.texture = healthSprite
 		"shield":
 			powerupSprite.texture = shieldSprite
+	#retorna o powerup escolhido
+	return chosenPowerup
