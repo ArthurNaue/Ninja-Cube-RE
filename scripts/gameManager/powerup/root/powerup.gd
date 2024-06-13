@@ -4,6 +4,7 @@ class_name Powerup
 #constantes
 const healthSprite = preload("res://assets/images/gameManager/powerup/health/root/healthPowerup.png")
 const shieldSprite = preload("res://assets/images/gameManager/powerup/shield/root/shieldPowerup.png")
+const timeSprite = preload("res://assets/images/gameManager/powerup/time/root/timePowerup.png")
 
 #variaveis onready
 @onready var powerupSprite = $powerupSprite
@@ -16,7 +17,8 @@ const shieldSprite = preload("res://assets/images/gameManager/powerup/shield/roo
 #variaveis
 var powerups = [
 	"health",
-	"shield"
+	"shield",
+	"time"
 ]
 var powerup: String
 
@@ -65,6 +67,13 @@ func powerup_picked() -> void:
 				playerHitbox.shield()
 				#desabilita o powerup
 				disable_powerup()
+		"time":
+			#verifica se o tempo ja nao esta parado
+			if !GameManager.timeStopped:
+				#para o tempo
+				GameManager.freeze_time()
+				#desabilita o powerup
+				disable_powerup()
 
 func set_powerup() -> String:
 	#define qual vai ser o powerup
@@ -74,5 +83,7 @@ func set_powerup() -> String:
 			powerupSprite.texture = healthSprite
 		"shield":
 			powerupSprite.texture = shieldSprite
+		"time":
+			powerupSprite.texture = timeSprite
 	#retorna o powerup escolhido
 	return chosenPowerup

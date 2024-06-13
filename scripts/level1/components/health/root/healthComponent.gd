@@ -38,10 +38,14 @@ func damage() -> void:
 		if parent.is_in_group("enemies"):
 			#spawna o efeito de pontos
 			spawn_points_effect(parent.global_position, 1)
+			#randomiza um numero pra ver se spawna o powerup
 			var shouldSpawnPowerup = randi_range(1, 20)
+			#se o numero escolhidop for 1
 			if shouldSpawnPowerup == 1:
+				#spawna o powerup
 				GameManager.spawnPowerup(parent.global_position)
 		else:
+			#deleta a entidade
 			parent.queue_free()
 	#manda o sinal de atualizar a vida
 	healthUpdated.emit(health)
@@ -67,4 +71,5 @@ func spawn_points_effect(location: Vector2, points: int) -> void:
 	pointsEffect.adjust_points(points)
 	#adiciona o objeto no jogo
 	game.add_child(pointsEffect)
+	#deleta a entidade
 	parent.queue_free()
