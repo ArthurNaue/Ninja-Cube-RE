@@ -12,3 +12,6 @@ res://scripts/level1/components/hitbox/root/hitboxComponent.gd
 res://scenes/level1/powerups/shield/effect/root/shieldEffect.tscn
 res://scripts/gameManager/powerup/shield/shieldEffect/root/shieldEffect.gd
 res://scripts/level1/entities/player/root/player.gd
+res://scripts/level1/entities/player/shuriken/root/shuriken.gd
+res://scripts/level1/entities/player/camera/root/camera.gd
+res://scripts/level1/entities/player/sword/root/sword.gd

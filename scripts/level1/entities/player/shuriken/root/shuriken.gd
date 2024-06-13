@@ -2,7 +2,7 @@ extends CharacterBody2D
 class_name PlayerBullet
 
 #constantes
-const moveSpeed = 5
+const moveSpeed = 6
 const killEffectScene = preload("res://scenes/level1/entities/player/kill_effect/root/killEffect.tscn")
 
 #variaveis onready
@@ -73,6 +73,8 @@ func tp_shoot(area: Area2D) -> void:
 	GameManager.gamePace = 1
 	#toca o som de tp shoot
 	tpShootAudio.play()
+	#aplica o camera shake
+	player.camera.apply_shake(4.0)
 
 #funcao de spawnar os kill effect
 func kill_effect(location: Vector2) -> void:

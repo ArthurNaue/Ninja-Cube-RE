@@ -1,6 +1,6 @@
+AnimationPlayer
 Timer
 AudioStreamPlayer2D
-AnimationPlayer
 HitboxComponent
 CollisionShape2D
 StaticBody2D

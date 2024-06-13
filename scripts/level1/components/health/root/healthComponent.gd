@@ -30,8 +30,8 @@ func damage() -> void:
 	health -= 1
 	#verifica se a entidade e o player
 	if parent.is_in_group("player"):
-		#toca o som de tomar dano
-		parent.hitAudio.play()
+		#emite o sinal de tomar dano
+		parent.dmg.emit()
 	#mata a entidade se a vida chegar a zero
 	if health <= 0:
 		#verifica se a entidade e um inimigo

@@ -33,6 +33,8 @@ func _process(_delta: float) -> void:
 				attacking = true
 				#verifica se o poder de ataque esta maior que 1500
 				if attackPower >= 1500:
+					#emite o sinal que o player comecou a atacar
+					player.attackStarted.emit()
 					attackAnim.play("chargedAttack")
 					#habilita o ataque do player
 					player.attacking = true
@@ -55,6 +57,8 @@ func _on_attack_anim_animation_finished(_anim) -> void:
 	if _anim == "chargedAttack":
 		#ativa a visibilidade do player
 		player.get_node("sprite").visible = true
+		#emite o sinal que o ataque acabou
+		player.attackFinished.emit()
 	#reseta o poder de ataque
 	attackPower = 0
 	#desabilita a variavel de ataque
