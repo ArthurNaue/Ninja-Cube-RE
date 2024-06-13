@@ -1,8 +1,0 @@
-[gd_resource type="Resource" script_class="EntitieStats" load_steps=2 format=3 uid="uid://b2q2u3lcy8o4n"]
-
-[ext_resource type="Script" path="res://scripts/game/resources/entitiesStats/root/entitieStats.gd" id="1_7e5og"]
-
-[resource]
-script = ExtResource("1_7e5og")
-maxHealth = 3
-moveSpeed = 200

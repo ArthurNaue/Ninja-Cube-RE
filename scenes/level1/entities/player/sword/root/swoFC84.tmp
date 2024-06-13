@@ -1,0 +1,482 @@
+[gd_scene load_steps=30 format=3 uid="uid://b3exsrvf730c2"]
+
+[ext_resource type="Script" path="res://scripts/level1/entities/player/sword/root/sword.gd" id="1_fq8c6"]
+[ext_resource type="Texture2D" uid="uid://cjjfi6nh081jb" path="res://assets/images/gameManager/entities/player/sword/charge/swordCharge1.png" id="2_5s2s6"]
+[ext_resource type="Texture2D" uid="uid://dils72k7o66uv" path="res://assets/images/gameManager/entities/player/sword/root/sword.png" id="2_s3s2n"]
+[ext_resource type="Script" path="res://scripts/level1/components/hitbox/root/hitboxComponent.gd" id="3_ge17k"]
+[ext_resource type="Texture2D" uid="uid://ykxg1hk4nwxd" path="res://assets/images/gameManager/entities/player/sword/effect/uncharged/unchargedSwordEffect.png" id="3_ndekn"]
+[ext_resource type="Texture2D" uid="uid://cr006d1ujk7yy" path="res://assets/images/gameManager/entities/player/sword/charge/swordCharge2.png" id="3_txxnp"]
+[ext_resource type="Texture2D" uid="uid://bjoqrvpxx0irb" path="res://assets/images/gameManager/entities/player/sword/charge/swordCharge3.png" id="4_w5mg4"]
+[ext_resource type="Texture2D" uid="uid://bpir2fo1jx2r7" path="res://assets/images/gameManager/entities/player/sword/charge/swordCharge4.png" id="5_1svvu"]
+[ext_resource type="Texture2D" uid="uid://40dyuk8dbjp3" path="res://assets/images/gameManager/entities/player/sword/charge/swordCharge5.png" id="6_d0ry5"]
+[ext_resource type="Texture2D" uid="uid://c8cycu22kdo0k" path="res://assets/images/gameManager/entities/player/sword/charge/swordCharge6.png" id="7_71a87"]
+[ext_resource type="Texture2D" uid="uid://cdwc1h3gmtn86" path="res://assets/images/gameManager/entities/player/sword/charge/swordCharge7.png" id="8_l5de2"]
+[ext_resource type="Texture2D" uid="uid://re77iuap8suv" path="res://assets/images/gameManager/entities/player/sword/charge/swordCharge8.png" id="9_xty30"]
+[ext_resource type="Texture2D" uid="uid://cl5qhkvciwj0p" path="res://assets/images/gameManager/entities/player/sword/charge/swordCharge9.png" id="10_kkxjt"]
+[ext_resource type="Texture2D" uid="uid://d4e23u6w6b5jk" path="res://assets/images/gameManager/entities/player/sword/charge/swordCharge10.png" id="11_p10sb"]
+[ext_resource type="Texture2D" uid="uid://bqt41acch4v2b" path="res://assets/images/gameManager/entities/player/sword/charge/swordCharge11.png" id="12_pbsjh"]
+[ext_resource type="Texture2D" uid="uid://vui1hw8xbkcv" path="res://assets/images/gameManager/entities/player/sword/charge/swordCharge12.png" id="13_iiooe"]
+[ext_resource type="Texture2D" uid="uid://cepny5hawrr7" path="res://assets/images/gameManager/entities/player/sword/charge/swordCharge13.png" id="14_ubcbh"]
+[ext_resource type="Texture2D" uid="uid://c7pkaar7osa1d" path="res://assets/images/gameManager/entities/player/sword/charge/swordCharge14.png" id="15_pew3u"]
+[ext_resource type="Texture2D" uid="uid://brdwdbfj5q8ia" path="res://assets/images/gameManager/entities/player/sword/charge/swordCharge15.png" id="16_ut7qy"]
+[ext_resource type="Texture2D" uid="uid://bm4xvur4hm2ns" path="res://assets/images/gameManager/entities/player/sword/charge/swordCharge16.png" id="17_w2jo7"]
+[ext_resource type="Texture2D" uid="uid://5d0l03dmc5cv" path="res://assets/images/gameManager/entities/player/sword/effect/charged/chargedSwordEffect.png" id="20_215cq"]
+[ext_resource type="AudioStream" uid="uid://drvyggfoeltch" path="res://assets/audio/entities/player/sword/charge/root/chargeAudio.wav" id="22_neld3"]
+
+[sub_resource type="Animation" id="Animation_lgndl"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("sprite:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("2_s3s2n")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("sprite:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-20, -15)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("sprite:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [-1.5708]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("sprite:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("hitbox/col:disabled")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("hitbox/col:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("unchargedSwordEffect:visible")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("chargedSwordEffect:visible")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("unchargedSwordEffect:position")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("hitbox/col:scale")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("chargedSwordEffect:frame")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_noum6"]
+resource_name = "charge1"
+length = 0.1
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("sprite:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-20, -15)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("sprite:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [-1.5708]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("sprite:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("sprite:texture")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("2_s3s2n")]
+}
+
+[sub_resource type="Animation" id="Animation_4uqqo"]
+resource_name = "charge"
+length = 1.5
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("sprite:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.1, 1.2, 1.3, 1.4, 1.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("2_5s2s6"), ExtResource("3_txxnp"), ExtResource("4_w5mg4"), ExtResource("5_1svvu"), ExtResource("6_d0ry5"), ExtResource("7_71a87"), ExtResource("8_l5de2"), ExtResource("9_xty30"), ExtResource("10_kkxjt"), ExtResource("11_p10sb"), ExtResource("12_pbsjh"), ExtResource("13_iiooe"), ExtResource("14_ubcbh"), ExtResource("15_pew3u"), ExtResource("16_ut7qy"), ExtResource("17_w2jo7")]
+}
+
+[sub_resource type="Animation" id="Animation_r7v4o"]
+resource_name = "unchargedAttack"
+length = 0.2
+step = 0.01
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("sprite:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(-20, -15), Vector2(20, 0), Vector2(-20, 15)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("sprite:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [-1.5708, 0.785398, 4.53786]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("sprite:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("chargedSwordEffect:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("hitbox/col:disabled")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("hitbox/col:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, -1.5)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("hitbox/col:scale")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 4.5)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("chargedSwordEffect:frame")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0, 0.01, 0.02, 0.03, 0.04, 0.05, 0.06, 0.07, 0.08, 0.09, 0.1, 0.11),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 10]
+}
+
+[sub_resource type="Animation" id="Animation_dmfon"]
+resource_name = "unchargedAttack"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("sprite:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(-20, -15), Vector2(20, 0), Vector2(-20, 15)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("sprite:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [-1.5708, 0.785398, 4.53786]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("sprite:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("hitbox/col:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(50, 0)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("unchargedSwordEffect:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("unchargedSwordEffect:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(50, 0)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("hitbox/col:scale")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.2, 2.5)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("hitbox/col:disabled")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_6o0ji"]
+_data = {
+"RESET": SubResource("Animation_lgndl"),
+"charge1": SubResource("Animation_noum6"),
+"charge2": SubResource("Animation_4uqqo"),
+"chargedAttack": SubResource("Animation_r7v4o"),
+"unchargedAttack": SubResource("Animation_dmfon")
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5g0w2"]
+size = Vector2(62, 13)
+
+[node name="sword" type="Node2D"]
+position = Vector2(0, 30)
+script = ExtResource("1_fq8c6")
+
+[node name="sprite" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(-20, -15)
+rotation = -1.5708
+texture = ExtResource("2_s3s2n")
+
+[node name="unchargedSwordEffect" type="Sprite2D" parent="."]
+visible = false
+texture = ExtResource("3_ndekn")
+
+[node name="chargedSwordEffect" type="Sprite2D" parent="."]
+visible = false
+texture = ExtResource("20_215cq")
+hframes = 11
+
+[node name="attackAnim" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_6o0ji")
+}
+autoplay = "start"
+
+[node name="hitbox" type="Area2D" parent="."]
+collision_mask = 4
+script = ExtResource("3_ge17k")
+
+[node name="col" type="CollisionShape2D" parent="hitbox"]
+shape = SubResource("RectangleShape2D_5g0w2")
+disabled = true
+
+[node name="chargeAudio" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("22_neld3")
+
+[connection signal="animation_finished" from="attackAnim" to="." method="_on_attack_anim_animation_finished"]
+[connection signal="animation_started" from="attackAnim" to="." method="_on_attack_anim_animation_started"]
+[connection signal="area_entered" from="hitbox" to="." method="_on_hitbox_area_entered"]

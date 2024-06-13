@@ -11,13 +11,14 @@ config_version=5
 [application]
 
 config/name="Holder"
-run/main_scene="res://scenes/game/root/game.tscn"
+run/main_scene="res://scenes/level1/root/level1.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
-config/icon="res://assets/game/images/entities/player/root/player.png"
+config/icon="res://assets/images/gameManager/entities/player/root/player.png"
 
 [autoload]
 
-EnemiesManager="*res://scripts/game/entities/enemies/root/enemies.gd"
+EnemiesManager="*res://scripts/level1/entities/enemies/root/enemies.gd"
+GameManager="*res://scripts/gameManager/root/gameManager.gd"
 
 [display]
 

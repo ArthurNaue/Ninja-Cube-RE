@@ -1,0 +1,133 @@
+[gd_scene load_steps=10 format=3 uid="uid://c5o41y2hkauv5"]
+
+[ext_resource type="Texture2D" uid="uid://8847dy3s34lp" path="res://assets/images/gameManager/powerup/root/powerup.png" id="1_42dkl"]
+[ext_resource type="Script" path="res://scripts/gameManager/powerup/root/powerup.gd" id="1_m3k7v"]
+[ext_resource type="Texture2D" uid="uid://po4ttmvadw03" path="res://assets/images/gameManager/powerup/shadow/root/powerupShadow.png" id="3_gs6qm"]
+[ext_resource type="Script" path="res://scripts/level1/components/hitbox/root/hitboxComponent.gd" id="3_u351w"]
+[ext_resource type="AudioStream" uid="uid://drvyggfoeltch" path="res://assets/audio/powerups/pickup/root/pickupAudio.wav" id="5_rkb4v"]
+
+[sub_resource type="Animation" id="Animation_k2630"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("powerupMold:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("powerupSprite:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("hitbox/col:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_eodeg"]
+resource_name = "float"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("powerupMold:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0, -8), Vector2(0, -3), Vector2(0, -8)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("powerupSprite:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0, -8), Vector2(0, -3), Vector2(0, -8)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("hitbox/col:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0, -8), Vector2(0, -3), Vector2(0, -8)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_6atq3"]
+_data = {
+"RESET": SubResource("Animation_k2630"),
+"float": SubResource("Animation_eodeg")
+}
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ib5rh"]
+radius = 7.0
+
+[node name="powerup" type="StaticBody2D"]
+z_index = 1
+script = ExtResource("1_m3k7v")
+
+[node name="shadowSprite" type="Sprite2D" parent="."]
+position = Vector2(0, 7.62145)
+texture = ExtResource("3_gs6qm")
+
+[node name="powerupMold" type="Sprite2D" parent="."]
+texture = ExtResource("1_42dkl")
+
+[node name="powerupSprite" type="Sprite2D" parent="."]
+
+[node name="anim" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_6atq3")
+}
+autoplay = "float"
+
+[node name="hitbox" type="Area2D" parent="."]
+script = ExtResource("3_u351w")
+
+[node name="col" type="CollisionShape2D" parent="hitbox"]
+shape = SubResource("CircleShape2D_ib5rh")
+disabled = true
+
+[node name="pickupSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_rkb4v")
+
+[node name="enableTimer" type="Timer" parent="."]
+wait_time = 0.5
+one_shot = true
+autostart = true
+
+[connection signal="area_entered" from="hitbox" to="." method="_on_hitbox_area_entered"]
+[connection signal="finished" from="pickupSound" to="." method="_on_pickup_sound_finished"]
+[connection signal="timeout" from="enableTimer" to="." method="_on_enable_timer_timeout"]
