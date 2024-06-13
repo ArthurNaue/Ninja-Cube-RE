@@ -24,6 +24,7 @@ const shurikenScene = preload("res://scenes/level1/entities/player/shuriken/root
 var moveVector: Vector2
 var attacking: bool
 var points: int
+var shielded: bool
 
 func _physics_process(_delta) -> void:
 	if attacking == false:

@@ -4,7 +4,7 @@
 [ext_resource type="Script" path="res://scripts/gameManager/powerup/root/powerup.gd" id="1_m3k7v"]
 [ext_resource type="Texture2D" uid="uid://po4ttmvadw03" path="res://assets/images/gameManager/powerup/shadow/root/powerupShadow.png" id="3_gs6qm"]
 [ext_resource type="Script" path="res://scripts/level1/components/hitbox/root/hitboxComponent.gd" id="3_u351w"]
-[ext_resource type="AudioStream" uid="uid://drvyggfoeltch" path="res://assets/audio/powerups/pickup/root/pickupAudio.wav" id="5_rkb4v"]
+[ext_resource type="AudioStream" uid="uid://drvyggfoeltch" path="res://assets/audio/powerups/pickup/root/pickupAudio.wav" id="5_hfx7q"]
 
 [sub_resource type="Animation" id="Animation_k2630"]
 length = 0.001
@@ -121,7 +121,7 @@ shape = SubResource("CircleShape2D_ib5rh")
 disabled = true
 
 [node name="pickupSound" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("5_rkb4v")
+stream = ExtResource("5_hfx7q")
 
 [node name="enableTimer" type="Timer" parent="."]
 wait_time = 0.5

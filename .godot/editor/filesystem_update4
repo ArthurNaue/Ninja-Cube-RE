@@ -9,3 +9,6 @@ res://scenes/level1/entities/enemies/normal/enemy/root/enemy.tscn
 res://scripts/level1/components/health/root/healthComponent.gd
 res://scripts/gameManager/root/gameManager.gd
 res://scripts/level1/components/hitbox/root/hitboxComponent.gd
+res://scenes/level1/powerups/shield/effect/root/shieldEffect.tscn
+res://scripts/gameManager/powerup/shield/shieldEffect/root/shieldEffect.gd
+res://scripts/level1/entities/player/root/player.gd
