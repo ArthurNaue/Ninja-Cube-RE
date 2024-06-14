@@ -1,5 +1,5 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1718407209
+::res://::1718407306
 ::res://assets/::1718222653
 ::res://assets/audio/::1718239819
 ::res://assets/audio/entities/::1718222698
@@ -23,9 +23,9 @@ pickupAudio.wav::AudioStreamWAV::8397292571856952111::1718222920::1718240440::1:
 ::res://assets/images/gameManager/::1718222601
 ::res://assets/images/gameManager/entities/::1716091365
 ::res://assets/images/gameManager/entities/enemies/::1716091368
-::res://assets/images/gameManager/entities/enemies/normal/::1718406808
-::res://assets/images/gameManager/entities/enemies/normal/enemy/::1718407191
-enemy.png::CompressedTexture2D::4096030881706258796::1718407191::1718407191::1::::<><>::
+::res://assets/images/gameManager/entities/enemies/normal/::1718407306
+::res://assets/images/gameManager/entities/enemies/normal/triangleEnemy/::1718407300
+triangleEnemy.png::CompressedTexture2D::4096030881706258796::1718407191::1718407306::1::::<><>::
 ::res://assets/images/gameManager/entities/player/::1717632738
 ::res://assets/images/gameManager/entities/player/root/::1718222596
 player.png::CompressedTexture2D::4140729259514153132::1717632737::1718222596::1::::<><>::
@@ -85,9 +85,9 @@ timePowerup.png::CompressedTexture2D::518046710621910483::1718305314::1718305314
 enemyStats.tres::Resource/Resource::5108966930245635971::1717993849::0::1::::<><>::res://scripts/level1/resources/entitiesStats/root/entitieStats.gd
 ::res://assets/images/gameManager/resources/entitiesStats/playerStats/::1716263679
 ::res://assets/images/gameManager/resources/entitiesStats/playerStats/root/::1718404082
-playerStats.tres::Resource/EntitieStats::4316226068438634023::1718404082::0::1::::<><>::res://scripts/level1/resources/entitiesStats/root/entitieStats.gd
-::res://assets/images/gameManager/shaders/::1718406876
-hit.tres::VisualShader::1294826464746826447::1718406876::0::1::::<><>::
+playerStats.tres::Resource/Resource::4316226068438634023::1718404082::0::1::::<><>::res://scripts/level1/resources/entitiesStats/root/entitieStats.gd
+::res://assets/images/gameManager/shaders/::1718407212
+hit.tres::VisualShader::1294826464746826447::1718407212::0::1::::<><>::
 ::res://assets/images/level1/::1718222590
 ::res://assets/images/level1/tilemap/::1718222590
 tilemap.png::CompressedTexture2D::1480075702940227587::1717684408::1718222590::1::::<><>::
@@ -98,8 +98,8 @@ tilemap.png::CompressedTexture2D::1480075702940227587::1717684408::1718222590::1
 ::res://scenes/level1/entities/enemies/::1716523621
 ::res://scenes/level1/entities/enemies/normal/::1718406794
 ::res://scenes/level1/entities/enemies/normal/enemy/::1718406794
-::res://scenes/level1/entities/enemies/normal/enemy/root/::1718407191
-enemy.tscn::PackedScene::3407086445483831436::1718407191::0::1::::<><>::uid://sphuqyo4dg12::::res://assets/images/gameManager/shaders/hit.tres<>res://scripts/level1/entities/enemies/normal/enemy/root/enemy.gd<>uid://ce1266m8s2krb::::res://assets/images/gameManager/resources/entitiesStats/enemyStats/root/enemyStats.tres<>res://scripts/level1/components/hitbox/root/hitboxComponent.gd<>uid://bymfba5mdoh6s::::res://assets/images/gameManager/entities/enemies/normal/enemy/enemy.png<>res://scripts/level1/components/health/root/healthComponent.gd<>res://scripts/level1/components/health/healthBar/root/healthBarComponent.gd<>res://scripts/level1/components/navAgent/root/navAgentComponent.gd
+::res://scenes/level1/entities/enemies/normal/enemy/root/::1718407272
+enemy.tscn::PackedScene::3407086445483831436::1718407272::0::1::::<><>::uid://sphuqyo4dg12::::res://assets/images/gameManager/shaders/hit.tres<>res://scripts/level1/entities/enemies/normal/enemy/root/enemy.gd<>uid://ce1266m8s2krb::::res://assets/images/gameManager/resources/entitiesStats/enemyStats/root/enemyStats.tres<>res://scripts/level1/components/hitbox/root/hitboxComponent.gd<>uid://cjjfi6nh081jb::::res://assets/images/gameManager/entities/player/sword/charge/swordCharge1.png<>res://scripts/level1/components/health/root/healthComponent.gd<>res://scripts/level1/components/health/healthBar/root/healthBarComponent.gd<>res://scripts/level1/components/navAgent/root/navAgentComponent.gd
 ::res://scenes/level1/entities/enemies/normal/triangle/::1716053795
 ::res://scenes/level1/entities/enemies/normal/triangle/root/::1718407191
 ::res://scenes/level1/entities/enemies/normal/triangleEnemy/::1718406464
@@ -127,8 +127,8 @@ powerup.tscn::PackedScene::6909216491117323128::1718406822::0::1::::<><>::uid://
 ::res://scenes/level1/powerups/shield/effect/::1718140987
 ::res://scenes/level1/powerups/shield/effect/root/::1718241984
 shieldEffect.tscn::PackedScene::1341286605365498788::1718241984::0::1::::<><>::res://scripts/gameManager/powerup/shield/shieldEffect/root/shieldEffect.gd<>uid://cfehdh7630mr7::::res://assets/images/gameManager/powerup/shield/effect/root/shieldEffect.png
-::res://scenes/level1/root/::1718407159
-level1.tscn::PackedScene::6638004272532823284::1718407159::0::1::::<><>::res://scripts/level1/root/level1.gd<>uid://vc7vo7sk120v::::res://assets/images/level1/tilemap/tilemap.png
+::res://scenes/level1/root/::1718407272
+level1.tscn::PackedScene::6638004272532823284::1718407272::0::1::::<><>::res://scripts/level1/root/level1.gd<>uid://vc7vo7sk120v::::res://assets/images/level1/tilemap/tilemap.png
 ::res://scripts/::1717993849
 ::res://scripts/gameManager/::1718124641
 ::res://scripts/gameManager/powerup/::1718141230
