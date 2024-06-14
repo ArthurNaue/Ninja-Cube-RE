@@ -4,7 +4,7 @@
 [ext_resource type="Script" path="res://scripts/level1/entities/enemies/normal/enemy/root/enemy.gd" id="1_y0xin"]
 [ext_resource type="Resource" uid="uid://ce1266m8s2krb" path="res://assets/images/gameManager/resources/entitiesStats/enemyStats/root/enemyStats.tres" id="2_57syo"]
 [ext_resource type="Script" path="res://scripts/level1/components/hitbox/root/hitboxComponent.gd" id="2_kxwno"]
-[ext_resource type="Texture2D" uid="uid://bymfba5mdoh6s" path="res://assets/images/gameManager/entities/enemies/normal/triangleEnemy/triangleEnemy.png" id="4_ekk36"]
+[ext_resource type="Texture2D" uid="uid://c5lhyrd6tb13i" path="res://assets/images/gameManager/entities/enemies/normal/triangleEnemy/root/triangleEnemy.png" id="4_ekk36"]
 [ext_resource type="Script" path="res://scripts/level1/components/health/root/healthComponent.gd" id="6_h0mu0"]
 [ext_resource type="Script" path="res://scripts/level1/components/health/healthBar/root/healthBarComponent.gd" id="7_mjep7"]
 [ext_resource type="Script" path="res://scripts/level1/components/navAgent/root/navAgentComponent.gd" id="8_3rtwc"]
