@@ -6,3 +6,4 @@ res://scripts/level1/entities/enemies/root/enemies.gd
 res://scripts/level1/entities/enemies/normal/enemy/root/enemy.gd
 res://scenes/level1/entities/enemies/normal/circle/root/circleEnemy.tscn
 res://scripts/level1/root/level1.gd
+res://scripts/level1/components/health/root/healthComponent.gd

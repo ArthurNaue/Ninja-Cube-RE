@@ -39,7 +39,7 @@ func damage() -> void:
 			#spawna o efeito de pontos
 			spawn_points_effect(parent.global_position, 1)
 			#randomiza um numero pra ver se spawna o powerup
-			var shouldSpawnPowerup = randi_range(1, 1)
+			var shouldSpawnPowerup = randi_range(1, 20)
 			#se o numero escolhidop for 1
 			if shouldSpawnPowerup == 1:
 				#spawna o powerup
