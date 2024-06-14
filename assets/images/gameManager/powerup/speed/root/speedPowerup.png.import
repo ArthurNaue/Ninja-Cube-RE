@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bymfba5mdoh6s"
-path="res://.godot/imported/enemy.png-1dbd0862a7c2b431e6556c20f8d862ed.ctex"
+uid="uid://df5jexyl74ugx"
+path="res://.godot/imported/speedPowerup.png-9eaf345c284032daf32b1611c7d8b972.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/images/gameManager/entities/enemies/normal/enemy/enemy.png"
-dest_files=["res://.godot/imported/enemy.png-1dbd0862a7c2b431e6556c20f8d862ed.ctex"]
+source_file="res://assets/images/gameManager/powerup/speed/root/speedPowerup.png"
+dest_files=["res://.godot/imported/speedPowerup.png-9eaf345c284032daf32b1611c7d8b972.ctex"]
 
 [params]
 

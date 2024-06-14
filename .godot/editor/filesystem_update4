@@ -2,5 +2,8 @@ res://scenes/level1/root/level1.tscn
 res://assets/images/gameManager/shaders/hit.tres
 res://scripts/gameManager/powerup/root/powerup.gd
 res://scripts/level1/components/health/root/healthComponent.gd
-res://scripts/gameManager/root/gameManager.gd
-res://scripts/level1/root/level1.gd
+res://scenes/level1/entities/player/root/player.tscn
+res://scripts/level1/entities/player/root/player.gd
+res://assets/images/gameManager/resources/entitiesStats/playerStats/root/playerStats.tres
+res://scenes/level1/powerups/root/powerup.tscn
+res://scenes/level1/entities/enemies/normal/enemy/root/enemy.tscn

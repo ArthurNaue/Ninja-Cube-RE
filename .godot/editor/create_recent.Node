@@ -1,4 +1,5 @@
 AnimationPlayer
+CollisionPolygon2D
 Timer
 AudioStreamPlayer2D
 HitboxComponent
@@ -11,4 +12,3 @@ RichTextLabel
 CanvasLayer
 TileMap
 NavAgentComponent
-NavigationAgent2D

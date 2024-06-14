@@ -31,6 +31,7 @@ var attacking: bool
 var points: int
 var shielded: bool
 var damaged: bool
+var boosted: bool
 
 func _physics_process(_delta) -> void:
 	if !attacking:
@@ -77,6 +78,13 @@ func shoot() -> void:
 		shuriken.facingRight = true
 	#spawna o objeto do tiro
 	get_parent().add_child(shuriken)
+
+func speed_powerup() -> void:
+	boosted = true
+	stats.moveSpeed = 400
+	await get_tree().create_timer(5).timeout
+	stats.moveSpeed = 200
+	boosted = false
 
 func _on_dmg() -> void:
 	#toca o som de tomar dano
