@@ -5,7 +5,12 @@ class_name Enemies
 @onready var game = get_tree().get_first_node_in_group("game")
 
 #variaveis
-var enemy1 = load("res://scenes/level1/entities/enemies/normal/enemy/root/enemy.tscn")
+var enemy1 = load("res://scenes/level1/entities/enemies/normal/triangle/root/triangleEnemy.tscn")
+var enemy2 = load("res://scenes/level1/entities/enemies/normal/circle/root/circleEnemy.tscn")
+var enemies = [
+	enemy1,
+	enemy2
+]
 
 #funcao de seguir o player
 func follow_player(enemy: CharacterBody2D) -> void:

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dxa4bfw3ckipw"
-path="res://.godot/imported/circleEnemy.png-34eb0d7cca88db78e42b4b61d4ff94eb.ctex"
+uid="uid://c5lhyrd6tb13i"
+path="res://.godot/imported/triangleEnemy.png-4a541a2597b956fa10a8bfb70ce882de.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/images/gameManager/entities/enemies/normal/circleEnemy/root/circleEnemy.png"
-dest_files=["res://.godot/imported/circleEnemy.png-34eb0d7cca88db78e42b4b61d4ff94eb.ctex"]
+source_file="res://assets/images/gameManager/entities/enemies/normal/triangle/root/triangleEnemy.png"
+dest_files=["res://.godot/imported/triangleEnemy.png-4a541a2597b956fa10a8bfb70ce882de.ctex"]
 
 [params]
 

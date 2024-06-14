@@ -1,9 +1,9 @@
+CollisionShape2D
 AnimationPlayer
 CollisionPolygon2D
 Timer
 AudioStreamPlayer2D
 HitboxComponent
-CollisionShape2D
 StaticBody2D
 Sprite2D
 Area2D
