@@ -41,3 +41,11 @@ func freeze_time() -> void:
 		enemyStat.moveSpeed = 150
 	#desativa a variavel de tempo parado
 	timeStopped = false
+
+func nuke() -> void:
+	#cria um array com todos os inimigos
+	var enemies = get_tree().get_nodes_in_group("enemies")
+	#mata todos os inimigos
+	for enemy in enemies:
+		for damage in 3:
+			enemy.get_node("hitbox").damage()

@@ -16,3 +16,5 @@ res://scenes/level1/powerups/root/powerup.tscn
 res://assets/resources/entitiesStats/enemies/normal/triangle/root/triangleEnemyStats.tres
 res://scenes/deathScreen/root/deathScreen.tscn
 res://scripts/deathScreen/replayButton/root/replayButton.gd
+res://scripts/gameManager/powerup/root/powerup.gd
+res://scenes/level1/entities/player/shuriken/root/shuriken.tscn
