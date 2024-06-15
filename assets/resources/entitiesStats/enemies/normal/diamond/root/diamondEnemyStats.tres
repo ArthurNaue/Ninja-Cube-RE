@@ -5,4 +5,4 @@
 [resource]
 script = ExtResource("1_4temv")
 maxHealth = 1
-moveSpeed = 200
+moveSpeed = 150

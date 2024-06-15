@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://bosohlwx6dyu3"]
+[gd_scene load_steps=17 format=3 uid="uid://bosohlwx6dyu3"]
 
 [ext_resource type="Script" path="res://scripts/level1/entities/enemies/normal/enemy/root/enemy.gd" id="1_gsvuk"]
 [ext_resource type="Resource" uid="uid://ce1266m8s2krb" path="res://assets/resources/entitiesStats/enemies/normal/triangle/root/triangleEnemyStats.tres" id="2_5blpn"]
@@ -25,91 +25,6 @@ border_width_top = 1
 border_width_right = 1
 border_width_bottom = 1
 border_color = Color(0.0196078, 0.105882, 0.172549, 1)
-
-[sub_resource type="Animation" id="Animation_kj85l"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("sprite:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(0, 0)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("col:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(0, -8.75)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("hitbox/col:position")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(0, -8.75)]
-}
-
-[sub_resource type="Animation" id="Animation_0oe2y"]
-resource_name = "float"
-loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("sprite:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.5),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(0, 0), Vector2(0, -10)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("col:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.5),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(0, -8.75), Vector2(0, -18.75)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("hitbox/col:position")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0.5, 1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(0, -18.75), Vector2(0, -8.75)]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_bgd0k"]
-_data = {
-"RESET": SubResource("Animation_kj85l"),
-"float": SubResource("Animation_0oe2y")
-}
 
 [sub_resource type="Animation" id="Animation_3ehs0"]
 length = 0.001
@@ -235,12 +150,6 @@ max_value = 2.0
 value = 1.0
 show_percentage = false
 script = ExtResource("7_0nemv")
-
-[node name="anim" type="AnimationPlayer" parent="."]
-libraries = {
-"": SubResource("AnimationLibrary_bgd0k")
-}
-autoplay = "float"
 
 [node name="hitAnim" type="AnimationPlayer" parent="."]
 libraries = {

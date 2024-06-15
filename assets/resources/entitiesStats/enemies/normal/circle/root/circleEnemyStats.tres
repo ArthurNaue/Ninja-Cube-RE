@@ -5,4 +5,4 @@
 [resource]
 script = ExtResource("1_nx1hl")
 maxHealth = 3
-moveSpeed = 100
+moveSpeed = 50

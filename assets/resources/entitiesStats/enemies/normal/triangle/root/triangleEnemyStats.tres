@@ -1,8 +1,8 @@
 [gd_resource type="Resource" script_class="EntitieStats" load_steps=2 format=3 uid="uid://ce1266m8s2krb"]
 
-[ext_resource type="Script" path="res://scripts/level1/resources/entitiesStats/root/entitieStats.gd" id="1_nnlkr"]
+[ext_resource type="Script" path="res://scripts/level1/resources/entitiesStats/root/entitieStats.gd" id="1_26mse"]
 
 [resource]
-script = ExtResource("1_nnlkr")
+script = ExtResource("1_26mse")
 maxHealth = 2
-moveSpeed = 150
+moveSpeed = 100

@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=3 uid="uid://k300yxqyvp36"]
+
+[ext_resource type="Script" path="res://scripts/deathScreen/replayButton/root/replayButton.gd" id="1_t5jha"]
+
+[node name="deathScreen" type="Node2D"]
+
+[node name="replayButton" type="Button" parent="."]
+offset_left = 270.0
+offset_top = 311.0
+offset_right = 336.0
+offset_bottom = 343.0
+text = "REPLAY"
+script = ExtResource("1_t5jha")
+
+[connection signal="pressed" from="replayButton" to="replayButton" method="_on_pressed"]

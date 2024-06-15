@@ -39,14 +39,16 @@ func damage() -> void:
 			#spawna o efeito de pontos
 			spawn_points_effect(parent.global_position, 1)
 			#randomiza um numero pra ver se spawna o powerup
-			var shouldSpawnPowerup = randi_range(1, 15)
+			var shouldSpawnPowerup = randi_range(1, 1)
 			#se o numero escolhidop for 1
 			if shouldSpawnPowerup == 1:
 				#spawna o powerup
 				GameManager.spawnPowerup(parent.global_position)
 		else:
-			#deleta a entidade
+			#deleta o player
 			parent.queue_free()
+			#muda pra cena de replay
+			get_tree().change_scene_to_file("res://scenes/deathScreen/root/deathScreen.tscn")
 	#manda o sinal de atualizar a vida
 	healthUpdated.emit(health)
 
