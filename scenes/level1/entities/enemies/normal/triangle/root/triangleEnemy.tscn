@@ -1,7 +1,7 @@
 [gd_scene load_steps=20 format=3 uid="uid://bosohlwx6dyu3"]
 
 [ext_resource type="Script" path="res://scripts/level1/entities/enemies/normal/enemy/root/enemy.gd" id="1_gsvuk"]
-[ext_resource type="Resource" uid="uid://ce1266m8s2krb" path="res://assets/images/gameManager/resources/entitiesStats/enemyStats/root/enemyStats.tres" id="2_5blpn"]
+[ext_resource type="Resource" uid="uid://ce1266m8s2krb" path="res://assets/resources/entitiesStats/enemies/normal/triangle/root/triangleEnemyStats.tres" id="2_5blpn"]
 [ext_resource type="Shader" uid="uid://sphuqyo4dg12" path="res://assets/images/gameManager/shaders/hit.tres" id="3_emrri"]
 [ext_resource type="Texture2D" uid="uid://c5lhyrd6tb13i" path="res://assets/images/gameManager/entities/enemies/normal/triangle/root/triangleEnemy.png" id="4_k4srr"]
 [ext_resource type="Script" path="res://scripts/level1/components/hitbox/root/hitboxComponent.gd" id="5_8o2g3"]

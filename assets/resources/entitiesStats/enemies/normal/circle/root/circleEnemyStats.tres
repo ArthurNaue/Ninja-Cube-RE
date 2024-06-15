@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="EntitieStats" load_steps=2 format=3 uid="uid://w2c1qcdhice4"]
+
+[ext_resource type="Script" path="res://scripts/level1/resources/entitiesStats/root/entitieStats.gd" id="1_nx1hl"]
+
+[resource]
+script = ExtResource("1_nx1hl")
+maxHealth = 3
+moveSpeed = 100

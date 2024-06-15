@@ -3,7 +3,7 @@ class_name gameManager
 
 #constantes
 const powerupScene = preload("res://scenes/level1/powerups/root/powerup.tscn")
-const enemyStats = preload("res://assets/images/gameManager/resources/entitiesStats/enemyStats/root/enemyStats.tres")
+const enemyStats = preload("res://assets/resources/entitiesStats/enemies/normal/triangle/root/triangleEnemyStats.tres")
 
 #variaveis
 var gamePace := 1.0

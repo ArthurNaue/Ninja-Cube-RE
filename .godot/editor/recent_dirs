@@ -1,3 +1,5 @@
+res://assets/resources/entitiesStats/enemies/normal/diamond/root
+res://assets/resources/entitiesStats/enemies/normal/circle/root
 res://scripts/gameManager/powerup/shield/shieldEffect/root
 res://scripts/gameManager/powerup/root
 res://scripts/gameManager/root
