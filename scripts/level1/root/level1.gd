@@ -28,6 +28,6 @@ func _ready() -> void:
 
 func _on_enemy_spawn_timer_timeout() -> void:
 	if enemySpawnTimer.wait_time > 0.20:
-		enemySpawnTimer.wait_time -= 0.001
+		enemySpawnTimer.wait_time -= 0.005
 	var enemySpawnPosition = enemySpawnPositions.pick_random()
 	GameManager.spawnEntitie(EnemiesManager.enemies.pick_random(), enemySpawnPosition)
