@@ -1,4 +1,5 @@
 Button
+RichTextLabel
 CollisionShape2D
 AnimationPlayer
 CollisionPolygon2D
@@ -9,7 +10,5 @@ StaticBody2D
 Sprite2D
 Area2D
 AnimatedSprite2D
-RichTextLabel
 CanvasLayer
 TileMap
-NavAgentComponent

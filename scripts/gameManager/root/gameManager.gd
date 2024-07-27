@@ -11,6 +11,7 @@ const diamondEnemyStats = preload("res://assets/resources/entitiesStats/enemies/
 #variaveis
 var gamePace := 1.0
 var timeStopped: bool
+var currentLevel: Node2D
 
 var enemyStats = [
 	triangleEnemyStats,
@@ -20,12 +21,12 @@ var enemyStats = [
 
 func spawnEntitie(entitieScene: PackedScene, location: Vector2) -> void:
 	var entitie = entitieScene.instantiate()
+	currentLevel.call_deferred("add_child", entitie)
 	entitie.global_position = location
-	add_child(entitie)
 
 func spawnPowerup(location: Vector2) -> void:
 	var powerup = powerupScene.instantiate() as StaticBody2D
-	call_deferred("add_child", powerup)
+	currentLevel.call_deferred("add_child", powerup)
 	powerup.global_position = location
 
 func freeze_time() -> void:
@@ -47,5 +48,4 @@ func nuke() -> void:
 	var enemies = get_tree().get_nodes_in_group("enemies")
 	#mata todos os inimigos
 	for enemy in enemies:
-		for damage in 3:
-			enemy.get_node("hitbox").damage()
+		enemy.get_node("hitbox").kill()

@@ -24,7 +24,15 @@ var enemySpawnPositions := [
 	]
 
 func _ready() -> void:
+	GameManager.currentLevel = self
 	GameManager.spawnEntitie(player, Vector2(150, 220))
+
+func _process(_delta: float) -> void:
+	if Input.is_action_just_pressed("ESQ"):
+		for child in get_children():
+			remove_child(child)
+			child.queue_free()
+		get_tree().change_scene_to_file("res://scenes/startScreen/root/startScreen.tscn")
 
 func _on_enemy_spawn_timer_timeout() -> void:
 	if enemySpawnTimer.wait_time > 0.20:

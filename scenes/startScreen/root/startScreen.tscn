@@ -1,0 +1,41 @@
+[gd_scene load_steps=3 format=3 uid="uid://f4shv8yibkpf"]
+
+[ext_resource type="Script" path="res://scripts/startScreen/buttons/playButton/root/playButton.gd" id="1_1r4nc"]
+[ext_resource type="Script" path="res://scripts/startScreen/buttons/exitButton/root/exitButton.gd" id="2_hqsd2"]
+
+[node name="startScreen" type="Node2D"]
+position = Vector2(-96, 25)
+
+[node name="gameTitle" type="RichTextLabel" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 300.0
+offset_top = 40.0
+offset_right = 400.0
+offset_bottom = 90.0
+grow_horizontal = 2
+scale = Vector2(2, 2)
+text = "Ninja Cube 
+		RE"
+
+[node name="playButton" type="Button" parent="."]
+offset_left = 362.0
+offset_top = 300.0
+offset_right = 412.0
+offset_bottom = 350.0
+pivot_offset = Vector2(25, 25)
+text = "PLAY"
+script = ExtResource("1_1r4nc")
+
+[node name="exitButton" type="Button" parent="."]
+offset_left = 362.0
+offset_top = 360.0
+offset_right = 412.0
+offset_bottom = 410.0
+pivot_offset = Vector2(25, 25)
+text = "EXIT"
+script = ExtResource("2_hqsd2")
+
+[connection signal="pressed" from="playButton" to="playButton" method="_on_pressed"]
+[connection signal="pressed" from="exitButton" to="exitButton" method="_on_pressed"]

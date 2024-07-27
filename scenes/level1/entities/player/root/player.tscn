@@ -225,6 +225,7 @@ modulate = Color(0.839216, 0.831373, 0.796078, 1)
 offset_right = 40.0
 offset_bottom = 24.0
 scale = Vector2(1.5, 1.5)
+pivot_offset = Vector2(20, 12)
 bbcode_enabled = true
 text = "[center]a"
 script = ExtResource("8_l1qkv")
@@ -236,10 +237,14 @@ libraries = {
 
 [node name="pointsUI" type="RichTextLabel" parent="hud"]
 modulate = Color(0.839216, 0.831373, 0.796078, 1)
-offset_left = 540.0
-offset_right = 580.0
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -40.0
 offset_bottom = 24.0
+grow_horizontal = 0
 scale = Vector2(1.5, 1.5)
+pivot_offset = Vector2(20, 12)
 bbcode_enabled = true
 text = "[center]a"
 script = ExtResource("9_ak4hg")

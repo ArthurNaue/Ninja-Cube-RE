@@ -17,6 +17,11 @@ func damage() -> void:
 	#destroi o objeto
 	health.damage()
 
+#funcao de matar o objeto
+func kill() -> void:
+	#executa a funcao de matar o objeto na vida
+	health.kill()
+
 #funcao de curar o objeto
 func heal() -> void:
 	#executa a cura na vida

@@ -66,9 +66,8 @@ func change_position(desiredPosition: Vector2) -> void:
 func tp_shoot(area: Area2D) -> void:
 	#troca a posicao do player com a bala
 	change_position(area.parent.global_position)
-	for damage in 3:
-		#destroi o objeto colidido
-		area.damage()
+	#mata o objeto
+	area.kill()
 	#desativa a camera lenta
 	GameManager.gamePace = 1
 	#toca o som de tp shoot
