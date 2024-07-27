@@ -1,3 +1,5 @@
+res://scripts/level1/entities/player/shuriken/root
+res://scripts/level1/entities/player/shuriken/projectile/root
 res://scripts/startScreen/buttons/exitButton/root
 res://scenes/startScreen/root
 res://scripts/startScreen/buttons/playButton/root

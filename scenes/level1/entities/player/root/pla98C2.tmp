@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://28umbtrxx3b7"]
+[gd_scene load_steps=24 format=3 uid="uid://28umbtrxx3b7"]
 
 [ext_resource type="Script" path="res://scripts/level1/entities/player/root/player.gd" id="1_0dvx4"]
 [ext_resource type="Resource" uid="uid://b2q2u3lcy8o4n" path="res://assets/resources/entitiesStats/player/root/playerStats.tres" id="2_nvrre"]
@@ -7,10 +7,10 @@
 [ext_resource type="Script" path="res://scripts/level1/components/hitbox/root/hitboxComponent.gd" id="5_bdv7d"]
 [ext_resource type="Script" path="res://scripts/level1/entities/player/camera/root/camera.gd" id="6_nt6iv"]
 [ext_resource type="PackedScene" uid="uid://b3exsrvf730c2" path="res://scenes/level1/entities/player/sword/root/sword.tscn" id="7_6gv83"]
-[ext_resource type="PackedScene" uid="uid://bj77v4tfok35s" path="res://scenes/level1/entities/player/shuriken/root/shuriken.tscn" id="8_08led"]
 [ext_resource type="Script" path="res://scripts/level1/entities/player/hud/healthUI/root/healthUI.gd" id="8_l1qkv"]
 [ext_resource type="Script" path="res://scripts/level1/entities/player/hud/pointsUI/root/pointsUI.gd" id="9_ak4hg"]
 [ext_resource type="AudioStream" uid="uid://dyaauronc7p15" path="res://assets/audio/entities/player/hit/root/hitAudio.wav" id="10_ehnm2"]
+[ext_resource type="AudioStream" uid="uid://cit4vdwj1jyhn" path="res://assets/audio/entities/player/shuriken/tpShoot/root/tpShootAudio.wav" id="11_khkla"]
 
 [sub_resource type="Animation" id="Animation_w2uf3"]
 length = 0.001
@@ -48,6 +48,18 @@ _data = {
 "RESET": SubResource("Animation_w2uf3"),
 "damaged": SubResource("Animation_upprb")
 }
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_4lrg7"]
+load_path = "res://.godot/imported/arrow.png-7471a1cce6a30d036645d0e29872f945.ctex"
+
+[sub_resource type="GDScript" id="GDScript_0x611"]
+script/source = "extends Sprite2D
+class_name ArrowSprite
+
+func _process(_delta: float) -> void:
+	#muda a rotacao para olhar pro mouse
+	look_at(get_global_mouse_position())
+"
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gi6pw"]
 size = Vector2(16, 20)
@@ -176,6 +188,13 @@ libraries = {
 "": SubResource("AnimationLibrary_6tsk5")
 }
 
+[node name="arrowSprite" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(1, 1)
+texture = SubResource("CompressedTexture2D_4lrg7")
+offset = Vector2(34, 0)
+script = SubResource("GDScript_0x611")
+
 [node name="health" type="Node2D" parent="."]
 script = ExtResource("4_ge7tc")
 
@@ -198,8 +217,6 @@ shape = SubResource("RectangleShape2D_gi6pw")
 
 [node name="sword" parent="." instance=ExtResource("7_6gv83")]
 position = Vector2(0, 2)
-
-[node name="shuriken" parent="." instance=ExtResource("8_08led")]
 
 [node name="hud" type="CanvasLayer" parent="."]
 
@@ -239,6 +256,9 @@ libraries = {
 
 [node name="hitAudio" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("10_ehnm2")
+
+[node name="tpShootAudio" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("11_khkla")
 
 [connection signal="attackFinished" from="." to="." method="_on_attack_finished"]
 [connection signal="attackStarted" from="." to="." method="_on_attack_started"]

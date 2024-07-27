@@ -7,22 +7,16 @@ signal pointsUpdated(points)
 signal attackStarted()
 signal attackFinished()
 
-#constantes
-const shurikenScene = preload("res://scenes/level1/entities/player/shuriken/root/shuriken.tscn")
-
 #variaveis export
 @export var stats: EntitieStats
 
 #variaveis onready
 @onready var sprite = $sprite
-@onready var arrowSprite = $arrowSprite
 @onready var col = $hitbox/col
 @onready var healthUI = $hud/healthUI
 @onready var hitAudio = $hitAudio
-@onready var tpShootAudio = $tpShootAudio
 @onready var camera = $camera
 @onready var anim = $anim
-@onready var canShoot = true
 @onready var game = get_tree().get_first_node_in_group("game")
 
 #variaveis
@@ -52,32 +46,9 @@ func _physics_process(_delta) -> void:
 			velocity = moveVector * (stats.moveSpeed * GameManager.gamePace)
 		else:
 			velocity = Vector2.ZERO
-	
-	#verifica se o player clicou com o mouse direito
-	if Input.is_action_just_pressed("m2"):
-		#verifica se pode atirar
-		if canShoot == true:
-			#atira
-			shoot()
 
 	#adiciona movimento ao jogador
 	move_and_slide()
-
-#funcao de atirar
-func shoot() -> void:
-	#desativa a habilidade de atirar
-	canShoot = false
-	#cria o objeto do tiro
-	var shuriken = shurikenScene.instantiate() as CharacterBody2D
-	#ajusta a posicao do objeto do tiro
-	shuriken.global_position = global_position
-	#ajusta a direcao do objeto do tiro
-	shuriken.direction = get_global_mouse_position() - global_position
-	#ajusta o lado que o objeto do tiro esta direcionado
-	if get_global_mouse_position().x > global_position.x:
-		shuriken.facingRight = true
-	#spawna o objeto do tiro
-	get_parent().add_child(shuriken)
 
 func speed_powerup() -> void:
 	boosted = true

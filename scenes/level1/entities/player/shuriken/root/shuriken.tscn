@@ -1,96 +1,10 @@
-[gd_scene load_steps=10 format=3 uid="uid://bj77v4tfok35s"]
+[gd_scene load_steps=3 format=3 uid="uid://bj77v4tfok35s"]
 
 [ext_resource type="Script" path="res://scripts/level1/entities/player/shuriken/root/shuriken.gd" id="1_t2hth"]
-[ext_resource type="Texture2D" uid="uid://cvpg2oyptxqk7" path="res://assets/images/gameManager/entities/player/shuriken/root/shuriken.png" id="2_6sjgt"]
-[ext_resource type="Script" path="res://scripts/level1/components/hitbox/root/hitboxComponent.gd" id="3_h826w"]
+[ext_resource type="AudioStream" uid="uid://cit4vdwj1jyhn" path="res://assets/audio/entities/player/shuriken/tpShoot/root/tpShootAudio.wav" id="2_cljmt"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_1yh72"]
-radius = 39.7535
-
-[sub_resource type="Animation" id="Animation_eccsw"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("sprite:rotation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.0]
-}
-
-[sub_resource type="Animation" id="Animation_48oml"]
-resource_name = "spin"
-length = 0.4
-loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("sprite:rotation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.4),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [0.0, -4.5204]
-}
-
-[sub_resource type="Animation" id="Animation_uo6o2"]
-resource_name = "spin"
-length = 0.4
-loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("sprite:rotation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.4),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [0.0, 4.5204]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_36iui"]
-_data = {
-"RESET": SubResource("Animation_eccsw"),
-"facingLeft": SubResource("Animation_48oml"),
-"facingRight": SubResource("Animation_uo6o2")
-}
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_8c3ia"]
-radius = 8.0
-
-[node name="shuriken" type="CharacterBody2D"]
-texture_filter = 1
-scale = Vector2(0.5, 0.5)
-collision_mask = 2
+[node name="shuriken" type="Node2D"]
 script = ExtResource("1_t2hth")
 
-[node name="sprite" type="Sprite2D" parent="."]
-texture = ExtResource("2_6sjgt")
-
-[node name="hitboxComponent" type="Area2D" parent="."]
-scale = Vector2(1.0062, 1)
-collision_mask = 4
-script = ExtResource("3_h826w")
-
-[node name="col" type="CollisionShape2D" parent="hitboxComponent"]
-shape = SubResource("CircleShape2D_1yh72")
-
-[node name="spinAnim" type="AnimationPlayer" parent="."]
-libraries = {
-"": SubResource("AnimationLibrary_36iui")
-}
-autoplay = "facingLeft"
-
-[node name="col" type="CollisionShape2D" parent="."]
-shape = SubResource("CircleShape2D_8c3ia")
-
-[connection signal="area_entered" from="hitboxComponent" to="." method="_on_hitbox_component_area_entered"]
-[connection signal="area_exited" from="hitboxComponent" to="." method="_on_hitbox_component_area_exited"]
+[node name="tpShootAudio" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_cljmt")

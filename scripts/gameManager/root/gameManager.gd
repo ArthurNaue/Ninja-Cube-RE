@@ -24,11 +24,6 @@ func spawnEntitie(entitieScene: PackedScene, location: Vector2) -> void:
 	currentLevel.call_deferred("add_child", entitie)
 	entitie.global_position = location
 
-func spawnPowerup(location: Vector2) -> void:
-	var powerup = powerupScene.instantiate() as StaticBody2D
-	currentLevel.call_deferred("add_child", powerup)
-	powerup.global_position = location
-
 func freeze_time() -> void:
 	#ativa a variavel de tempo parado
 	timeStopped = true

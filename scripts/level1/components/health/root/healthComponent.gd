@@ -6,6 +6,7 @@ signal healthUpdated(health: int)
 
 #constantes
 const pointsEffectScene = preload("res://scenes/level1/entities/player/hud/pointsEffect/root/pointsEffect.tscn")
+const powerupScene = preload("res://scenes/level1/powerups/root/powerup.tscn")
 
 #variaveis export
 @export var healthBar: HealthBarComponent
@@ -74,10 +75,10 @@ func update_health() -> void:
 			spawn_points_effect(parent.global_position, 1)
 			#randomiza um numero pra ver se spawna o powerup
 			var shouldSpawnPowerup = randi_range(1, 15)
-			#se o numero escolhidop for 1
+			#se o numero escolhido for 1
 			if shouldSpawnPowerup == 1:
 				#spawna o powerup
-				GameManager.spawnPowerup(parent.global_position)
+				GameManager.spawnEntitie(powerupScene, parent.global_position)
 		else:
 			#deleta todos os objetos do jogo
 			for child in game.get_children():
