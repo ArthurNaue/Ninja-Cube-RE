@@ -50,22 +50,6 @@ func heal() -> void:
 		#manda o sinal de atualizar a vida
 		healthUpdated.emit(health)
 
-func spawn_points_effect(location: Vector2, points: int) -> void:
-	#adiciona aos pontos do jogador
-	player.points += points
-	#emite o sinal que atualiza os pontos do player
-	player.pointsUpdated.emit(player.points)
-	#cria o objeto do efeito de pontos
-	var pointsEffect = pointsEffectScene.instantiate() as RichTextLabel
-	#atualiza a posicao do objeto do efeito de pontos
-	pointsEffect.global_position = location
-	#executa a funcao que atualiza os pontos do objeto
-	pointsEffect.adjust_points(points)
-	#adiciona o objeto no jogo
-	game.add_child(pointsEffect)
-	#deleta a entidade
-	parent.queue_free()
-
 func update_health() -> void:
 	#mata a entidade se a vida chegar a zero
 	if health <= 0:
@@ -88,3 +72,20 @@ func update_health() -> void:
 			get_tree().change_scene_to_file("res://scenes/deathScreen/root/deathScreen.tscn")
 	#manda o sinal de atualizar a vida
 	healthUpdated.emit(health)
+
+func spawn_points_effect(location: Vector2, points: int) -> void:
+	#adiciona aos pontos do jogador
+	player.points += points
+	#emite o sinal que atualiza os pontos do player
+	player.pointsUpdated.emit(player.points)
+	#cria o objeto do efeito de pontos
+	var pointsEffect = pointsEffectScene.instantiate() as RichTextLabel
+	#executa a funcao que atualiza os pontos do objeto
+	pointsEffect.adjust_points(points)
+	#adiciona o objeto no jogo
+	game.add_child(pointsEffect)
+	#deleta a entidade
+	parent.queue_free()
+	#atualiza a posicao do objeto do efeito de pontos
+	pointsEffect.global_position = location
+

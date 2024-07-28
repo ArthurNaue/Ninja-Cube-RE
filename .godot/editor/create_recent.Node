@@ -1,3 +1,4 @@
+CanvasLayer
 Button
 RichTextLabel
 CollisionShape2D
@@ -10,5 +11,4 @@ StaticBody2D
 Sprite2D
 Area2D
 AnimatedSprite2D
-CanvasLayer
 TileMap

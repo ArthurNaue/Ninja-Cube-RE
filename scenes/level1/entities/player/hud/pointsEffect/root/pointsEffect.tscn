@@ -4,8 +4,9 @@
 
 [node name="pointsEffect" type="RichTextLabel"]
 modulate = Color(0.839216, 0.831373, 0.796078, 1)
-offset_right = 40.0
-offset_bottom = 24.0
+offset_right = 50.0
+offset_bottom = 50.0
+pivot_offset = Vector2(25, 25)
 size_flags_vertical = 0
 bbcode_enabled = true
 text = "aaa"
