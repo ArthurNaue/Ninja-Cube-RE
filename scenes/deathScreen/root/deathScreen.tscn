@@ -16,7 +16,7 @@ anchor_bottom = 0.5
 offset_left = -33.0
 offset_top = -16.0
 offset_right = 33.0
-offset_bottom = 16.0
+offset_bottom = 50.0
 grow_horizontal = 2
 grow_vertical = 2
 text = "REPLAY"
@@ -25,13 +25,13 @@ script = ExtResource("1_t5jha")
 [node name="exitButton" type="Button" parent="hud"]
 anchors_preset = -1
 anchor_left = 0.5
-anchor_top = 0.55
+anchor_top = 0.6
 anchor_right = 0.5
-anchor_bottom = 0.55
+anchor_bottom = 0.6
 offset_left = -33.0
-offset_top = -25.0
+offset_top = -9.0
 offset_right = 33.0
-offset_bottom = 7.0
+offset_bottom = 57.0
 grow_horizontal = 2
 grow_vertical = 2
 pivot_offset = Vector2(25, 25)
@@ -40,12 +40,13 @@ script = ExtResource("2_2n1sq")
 
 [node name="gameOverText" type="RichTextLabel" parent="hud"]
 anchors_preset = -1
-anchor_left = 0.475
-anchor_top = 0.45
-anchor_right = 0.475
-anchor_bottom = 0.45
+anchor_left = 0.45
+anchor_top = 0.2
+anchor_right = 0.45
+anchor_bottom = 0.2
 offset_right = 97.0
 offset_bottom = 25.0
+scale = Vector2(2, 2)
 text = "GAME OVER"
 
 [connection signal="pressed" from="hud/replayButton" to="hud/replayButton" method="_on_pressed"]

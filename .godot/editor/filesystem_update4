@@ -9,3 +9,4 @@ res://scenes/deathScreen/root/deathScreen.tscn
 res://scripts/gameManager/root/gameManager.gd
 res://scripts/startScreen/texts/bestScoreText/bestScoreText.gd
 res://scripts/level1/root/level1.gd
+res://scripts/deathScreen/replayButton/root/replayButton.gd
