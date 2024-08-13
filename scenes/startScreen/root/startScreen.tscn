@@ -98,5 +98,14 @@ offset_bottom = 22.5
 bbcode_enabled = true
 script = ExtResource("3_1nkgk")
 
+[node name="RichTextLabel" type="RichTextLabel" parent="canvasLayer"]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -25.0
+offset_right = 191.0
+grow_vertical = 0
+text = "GAME MADE BY: NAWER"
+
 [connection signal="pressed" from="canvasLayer/playButton" to="canvasLayer/playButton" method="_on_pressed"]
 [connection signal="pressed" from="canvasLayer/exitButton" to="canvasLayer/exitButton" method="_on_pressed"]

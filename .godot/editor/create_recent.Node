@@ -1,9 +1,9 @@
 RichTextLabel
+Button
 VBoxContainer
 ColorRect
 Container
 CanvasLayer
-Button
 CollisionShape2D
 AnimationPlayer
 CollisionPolygon2D

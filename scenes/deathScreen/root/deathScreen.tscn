@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://k300yxqyvp36"]
+[gd_scene load_steps=3 format=3 uid="uid://k300yxqyvp36"]
 
 [ext_resource type="Script" path="res://scripts/deathScreen/replayButton/root/replayButton.gd" id="1_t5jha"]
+[ext_resource type="Script" path="res://scripts/startScreen/buttons/exitButton/root/exitButton.gd" id="2_2n1sq"]
 
 [node name="deathScreen" type="Node2D"]
 
@@ -21,4 +22,31 @@ grow_vertical = 2
 text = "REPLAY"
 script = ExtResource("1_t5jha")
 
+[node name="exitButton" type="Button" parent="hud"]
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.55
+anchor_right = 0.5
+anchor_bottom = 0.55
+offset_left = -33.0
+offset_top = -25.0
+offset_right = 33.0
+offset_bottom = 7.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(25, 25)
+text = "EXIT"
+script = ExtResource("2_2n1sq")
+
+[node name="gameOverText" type="RichTextLabel" parent="hud"]
+anchors_preset = -1
+anchor_left = 0.475
+anchor_top = 0.45
+anchor_right = 0.475
+anchor_bottom = 0.45
+offset_right = 97.0
+offset_bottom = 25.0
+text = "GAME OVER"
+
 [connection signal="pressed" from="hud/replayButton" to="hud/replayButton" method="_on_pressed"]
+[connection signal="pressed" from="hud/exitButton" to="hud/exitButton" method="_on_pressed"]
