@@ -64,6 +64,10 @@ func update_health() -> void:
 				#spawna o powerup
 				GameManager.spawnEntitie(powerupScene, parent.global_position)
 		else:
+			#verifica se os pontos feitos sao maior que os melhores pontos
+			if GameManager.points > GameManager.bestScore:
+				#atualiza os melhores pontos
+				GameManager.bestScore = GameManager.points
 			#deleta todos os objetos do jogo
 			for child in game.get_children():
 				remove_child(child)
@@ -75,9 +79,9 @@ func update_health() -> void:
 
 func spawn_points_effect(location: Vector2, points: int) -> void:
 	#adiciona aos pontos do jogador
-	player.points += points
+	GameManager.points += points
 	#emite o sinal que atualiza os pontos do player
-	player.pointsUpdated.emit(player.points)
+	player.pointsUpdated.emit(GameManager.points)
 	#cria o objeto do efeito de pontos
 	var pointsEffect = pointsEffectScene.instantiate() as RichTextLabel
 	#executa a funcao que atualiza os pontos do objeto

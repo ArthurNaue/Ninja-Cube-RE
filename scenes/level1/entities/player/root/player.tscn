@@ -205,6 +205,11 @@ position = Vector2(0, 2)
 
 [node name="healthUI" type="RichTextLabel" parent="hud"]
 modulate = Color(0.839216, 0.831373, 0.796078, 1)
+anchors_preset = -1
+anchor_left = 0.05
+anchor_top = 0.05
+anchor_right = 0.05
+anchor_bottom = 0.05
 offset_right = 40.0
 offset_bottom = 24.0
 scale = Vector2(1.5, 1.5)
@@ -220,9 +225,11 @@ libraries = {
 
 [node name="pointsUI" type="RichTextLabel" parent="hud"]
 modulate = Color(0.839216, 0.831373, 0.796078, 1)
-anchors_preset = 1
-anchor_left = 1.0
-anchor_right = 1.0
+anchors_preset = -1
+anchor_left = 0.95
+anchor_top = 0.05
+anchor_right = 0.95
+anchor_bottom = 0.05
 offset_left = -40.0
 offset_bottom = 24.0
 grow_horizontal = 0

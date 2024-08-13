@@ -4,12 +4,21 @@
 
 [node name="deathScreen" type="Node2D"]
 
-[node name="replayButton" type="Button" parent="."]
-offset_left = 270.0
-offset_top = 311.0
-offset_right = 336.0
-offset_bottom = 343.0
+[node name="hud" type="CanvasLayer" parent="."]
+
+[node name="replayButton" type="Button" parent="hud"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -33.0
+offset_top = -16.0
+offset_right = 33.0
+offset_bottom = 16.0
+grow_horizontal = 2
+grow_vertical = 2
 text = "REPLAY"
 script = ExtResource("1_t5jha")
 
-[connection signal="pressed" from="replayButton" to="replayButton" method="_on_pressed"]
+[connection signal="pressed" from="hud/replayButton" to="hud/replayButton" method="_on_pressed"]

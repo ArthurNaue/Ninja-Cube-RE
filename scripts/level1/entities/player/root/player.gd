@@ -22,7 +22,6 @@ signal attackFinished()
 #variaveis
 var moveVector: Vector2
 var attacking: bool
-var points: int
 var shielded: bool
 var damaged: bool
 var boosted: bool

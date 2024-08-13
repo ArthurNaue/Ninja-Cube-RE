@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://f4shv8yibkpf"]
+[gd_scene load_steps=4 format=3 uid="uid://f4shv8yibkpf"]
 
 [ext_resource type="Script" path="res://scripts/startScreen/buttons/playButton/root/playButton.gd" id="1_1r4nc"]
 [ext_resource type="Script" path="res://scripts/startScreen/buttons/exitButton/root/exitButton.gd" id="2_hqsd2"]
+[ext_resource type="Script" path="res://scripts/startScreen/texts/bestScoreText/bestScoreText.gd" id="3_1nkgk"]
 
 [node name="startScreen" type="Node2D"]
 position = Vector2(-96, 25)
@@ -9,15 +10,15 @@ position = Vector2(-96, 25)
 [node name="canvasLayer" type="CanvasLayer" parent="."]
 
 [node name="gameTitle" type="RichTextLabel" parent="canvasLayer"]
-anchors_preset = 8
+anchors_preset = -1
 anchor_left = 0.5
-anchor_top = 0.5
+anchor_top = 0.2
 anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -62.5
-offset_top = -37.5
-offset_right = 62.5
-offset_bottom = 37.5
+anchor_bottom = 0.2
+offset_left = -62.0
+offset_top = -38.0
+offset_right = 63.0
+offset_bottom = 37.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(2, 2)
@@ -27,11 +28,11 @@ text = "[center]Ninja Cube
 		[center]RE"
 
 [node name="playButton" type="Button" parent="canvasLayer"]
-anchors_preset = -1
+anchors_preset = 8
 anchor_left = 0.5
-anchor_top = 0.7
+anchor_top = 0.5
 anchor_right = 0.5
-anchor_bottom = 0.7
+anchor_bottom = 0.5
 offset_left = -25.0
 offset_top = -25.0
 offset_right = 25.0
@@ -45,9 +46,9 @@ script = ExtResource("1_1r4nc")
 [node name="exitButton" type="Button" parent="canvasLayer"]
 anchors_preset = -1
 anchor_left = 0.5
-anchor_top = 0.8
+anchor_top = 0.6
 anchor_right = 0.5
-anchor_bottom = 0.8
+anchor_bottom = 0.6
 offset_left = -25.0
 offset_top = -25.0
 offset_right = 25.0
@@ -57,6 +58,45 @@ grow_vertical = 2
 pivot_offset = Vector2(25, 25)
 text = "EXIT"
 script = ExtResource("2_hqsd2")
+
+[node name="bestScore" type="RichTextLabel" parent="canvasLayer"]
+anchors_preset = -1
+anchor_left = 0.725
+anchor_top = 0.5
+anchor_right = 0.725
+anchor_bottom = 0.5
+offset_top = 1.0
+offset_right = 94.0
+offset_bottom = 24.0
+text = "BEST SCORE"
+
+[node name="bestScoreRect" type="ColorRect" parent="canvasLayer"]
+z_index = -1
+anchors_preset = -1
+anchor_left = 0.75
+anchor_top = 0.55
+anchor_right = 0.75
+anchor_bottom = 0.55
+offset_left = -25.0
+offset_top = -25.0
+offset_right = 25.0
+offset_bottom = 25.0
+color = Color(0.0627451, 0.0745098, 0.137255, 1)
+
+[node name="bestScoreText" type="RichTextLabel" parent="canvasLayer/bestScoreRect"]
+z_index = 1
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.75
+anchor_top = 0.55
+anchor_right = 0.75
+anchor_bottom = 0.55
+offset_left = -37.5
+offset_top = -14.5
+offset_right = 12.5
+offset_bottom = 22.5
+bbcode_enabled = true
+script = ExtResource("3_1nkgk")
 
 [connection signal="pressed" from="canvasLayer/playButton" to="canvasLayer/playButton" method="_on_pressed"]
 [connection signal="pressed" from="canvasLayer/exitButton" to="canvasLayer/exitButton" method="_on_pressed"]

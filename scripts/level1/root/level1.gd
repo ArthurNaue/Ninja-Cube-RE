@@ -24,11 +24,16 @@ var enemySpawnPositions := [
 	]
 
 func _ready() -> void:
+	GameManager.points = 0
 	GameManager.currentLevel = self
 	GameManager.spawnEntitie(player, Vector2(150, 220))
 
 func _process(_delta: float) -> void:
 	if Input.is_action_just_pressed("ESQ"):
+		#verifica se os pontos feitos sao maior que os melhores pontos
+		if GameManager.points > GameManager.bestScore:
+			#atualiza os melhores pontos
+			GameManager.bestScore = GameManager.points
 		for child in get_children():
 			remove_child(child)
 			child.queue_free()

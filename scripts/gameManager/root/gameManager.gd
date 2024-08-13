@@ -12,6 +12,8 @@ const diamondEnemyStats = preload("res://assets/resources/entitiesStats/enemies/
 var gamePace := 1.0
 var timeStopped: bool
 var currentLevel: Node2D
+var points := 0
+var bestScore = points
 
 var enemyStats = [
 	triangleEnemyStats,

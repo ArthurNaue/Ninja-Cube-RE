@@ -6,10 +6,10 @@ class_name pointsUI
 
 func _ready() -> void:
 	#zera os pontos do jogador
-	text = "[center]0" 
+	text = "[center]" + str(GameManager.points)
 
 func _on_player_points_updated(points) -> void:
 	#atualiza o texto pros pontos do jogador
-	text = "[center]" + str(points)
+	text = "[center]" + str(GameManager.points)
 	#toca a animacao de atualizar os pontos
 	pointsUpdateAnim.play("updatePoints")
