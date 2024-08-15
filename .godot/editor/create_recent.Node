@@ -12,4 +12,3 @@ Timer
 AudioStreamPlayer2D
 HitboxComponent
 StaticBody2D
-Sprite2D

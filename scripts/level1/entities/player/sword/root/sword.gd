@@ -61,6 +61,8 @@ func _process(_delta: float) -> void:
 						player.get_node("sprite").visible = false
 						#reseta o cooldown
 						cooldown = 0
+						#emite o sinal pra atualizar a barra de cooldown
+						updateCooldown.emit(0)
 					else:
 						attackAnim.play("unchargedAttack")
 				else:

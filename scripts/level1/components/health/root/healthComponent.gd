@@ -18,6 +18,7 @@ const powerupScene = preload("res://scenes/level1/powerups/root/powerup.tscn")
 @onready var game = get_tree().get_first_node_in_group("game")
 @onready var player = get_tree().get_first_node_in_group("player")
 @onready var sword = get_tree().get_first_node_in_group("sword")
+@onready var shuriken = get_tree().get_first_node_in_group("shuriken")
 
 func _ready() -> void:
 	#verifica se a barra de vida ta vazia
@@ -60,6 +61,8 @@ func update_health() -> void:
 			spawn_points_effect(parent.global_position, 1)
 			#diminui um no cooldown da espada
 			sword.updateCooldown.emit(1)
+			#diminui um no cooldown da shuriken
+			shuriken.updateCooldown.emit(1)
 			#randomiza um numero pra ver se spawna o powerup
 			var shouldSpawnPowerup = randi_range(1, 15)
 			#se o numero escolhido for 1

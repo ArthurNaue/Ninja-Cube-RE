@@ -6,3 +6,5 @@ res://scenes/startScreen/root/startScreen.tscn
 res://scripts/level1/entities/player/sword/cooldownUI/root/cooldownUI.gd
 res://scripts/level1/entities/player/sword/root/sword.gd
 res://scripts/level1/components/health/root/healthComponent.gd
+res://scenes/level1/entities/player/shuriken/root/shuriken.tscn
+res://scripts/level1/entities/player/shuriken/root/shuriken.gd

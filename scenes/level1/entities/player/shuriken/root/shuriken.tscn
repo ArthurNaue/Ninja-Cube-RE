@@ -3,8 +3,25 @@
 [ext_resource type="Script" path="res://scripts/level1/entities/player/shuriken/root/shuriken.gd" id="1_t2hth"]
 [ext_resource type="AudioStream" uid="uid://cit4vdwj1jyhn" path="res://assets/audio/entities/player/shuriken/tpShoot/root/tpShootAudio.wav" id="2_cljmt"]
 
-[node name="shuriken" type="Node2D"]
+[node name="shuriken" type="Node2D" groups=["shuriken"]]
 script = ExtResource("1_t2hth")
 
 [node name="tpShootAudio" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("2_cljmt")
+
+[node name="hudLayer" type="CanvasLayer" parent="."]
+
+[node name="cooldownUI" type="ProgressBar" parent="hudLayer"]
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.9
+anchor_right = 0.5
+anchor_bottom = 0.9
+offset_left = -125.0
+offset_top = -15.0
+offset_right = 125.0
+offset_bottom = 15.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[connection signal="updateCooldown" from="." to="." method="_on_update_cooldown"]
