@@ -1,15 +1,27 @@
 extends Node2D
 class_name Sword
 
+#sinais
+signal updateCooldown(amount: int)
+
 #variaveis onready
+@onready var player = get_tree().get_first_node_in_group("player")
 @onready var attackAnim = $attackAnim
 @onready var sprite = $sprite
-@onready var player = get_tree().get_first_node_in_group("player")
 @onready var chargeAudio = $chargeAudio
+@onready var cooldownUI = $hudLayer/cooldownUI
+@onready var maxCooldown := 3
+@onready var cooldown := 0
 
 #variaveis
 var attacking: bool
 var attackPower: int
+
+func _ready() -> void:
+	#atualiza o valor maximo da barra de cooldown
+	cooldownUI.max_value = maxCooldown
+	#emite o sinal pra atualizar a barra de cooldown
+	updateCooldown.emit(0)
 
 func _process(_delta: float) -> void:
 		#verifica se ja esta atacando
@@ -20,8 +32,10 @@ func _process(_delta: float) -> void:
 				apply_direction()
 				#verifica se o poder de ataque esta menor que 1500
 				if attackPower >= 1500:
-					#toca a animacao de carregamento2
-					attackAnim.play("charge2")
+					#verifica se o cooldown acabou
+					if cooldown == maxCooldown:
+						#toca a animacao de carregamento2
+						attackAnim.play("charge2")
 				else:
 					#adiciona 5 ao poder de ataque
 					attackPower += 5
@@ -33,16 +47,22 @@ func _process(_delta: float) -> void:
 				attacking = true
 				#verifica se o poder de ataque esta maior que 1500
 				if attackPower >= 1500:
-					#emite o sinal que o player comecou a atacar
-					player.attackStarted.emit()
-					attackAnim.play("chargedAttack")
-					#habilita o ataque do player
-					player.attacking = true
-					#define a direcao do ataque
-					var direction = get_global_mouse_position() - player.global_position
-					#aplica a direcao no jogador
-					player.velocity = direction.normalized() * attackPower
-					player.get_node("sprite").visible = false
+					#verifica se o cooldown acabou
+					if cooldown == maxCooldown:
+						#emite o sinal que o player comecou a atacar
+						player.attackStarted.emit()
+						attackAnim.play("chargedAttack")
+						#habilita o ataque do player
+						player.attacking = true
+						#define a direcao do ataque
+						var direction = get_global_mouse_position() - player.global_position
+						#aplica a direcao no jogador
+						player.velocity = direction.normalized() * attackPower
+						player.get_node("sprite").visible = false
+						#reseta o cooldown
+						cooldown = 0
+					else:
+						attackAnim.play("unchargedAttack")
 				else:
 					attackAnim.play("unchargedAttack")
 
@@ -87,3 +107,12 @@ func _on_hitbox_area_entered(_area) -> void:
 	if _area.parent.is_in_group("enemies"):
 		#aplica o efeito de dano na area
 		_area.parent.get_node("hitAnim").play("hit")
+
+#funcao que executa ao dar update no cooldown
+func _on_update_cooldown(amount: int) -> void:
+	#verifica se o cooldown e menor que o cooldown maximo
+	if cooldown < maxCooldown:
+		#diminui um no cooldown
+		cooldown += amount
+	#atualiza o valor da barra de cooldown
+	cooldownUI.value = cooldown

@@ -1,9 +1,10 @@
+ProgressBar
+CanvasLayer
 RichTextLabel
 Button
 VBoxContainer
 ColorRect
 Container
-CanvasLayer
 CollisionShape2D
 AnimationPlayer
 CollisionPolygon2D

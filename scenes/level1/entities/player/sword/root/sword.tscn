@@ -441,7 +441,7 @@ _data = {
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5g0w2"]
 size = Vector2(62, 13)
 
-[node name="sword" type="Node2D"]
+[node name="sword" type="Node2D" groups=["sword"]]
 position = Vector2(0, 30)
 script = ExtResource("1_fq8c6")
 
@@ -477,6 +477,23 @@ disabled = true
 [node name="chargeAudio" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("22_neld3")
 
+[node name="hudLayer" type="CanvasLayer" parent="."]
+
+[node name="cooldownUI" type="ProgressBar" parent="hudLayer"]
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.8
+anchor_right = 0.5
+anchor_bottom = 0.8
+offset_left = -125.0
+offset_top = -15.0
+offset_right = 125.0
+offset_bottom = 15.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(125, 15)
+
+[connection signal="updateCooldown" from="." to="." method="_on_update_cooldown"]
 [connection signal="animation_finished" from="attackAnim" to="." method="_on_attack_anim_animation_finished"]
 [connection signal="animation_started" from="attackAnim" to="." method="_on_attack_anim_animation_started"]
 [connection signal="area_entered" from="hitbox" to="." method="_on_hitbox_area_entered"]
