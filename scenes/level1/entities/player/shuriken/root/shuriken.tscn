@@ -13,15 +13,26 @@ stream = ExtResource("2_cljmt")
 
 [node name="cooldownUI" type="ProgressBar" parent="hudLayer"]
 anchors_preset = -1
-anchor_left = 0.5
-anchor_top = 0.9
-anchor_right = 0.5
-anchor_bottom = 0.9
-offset_left = -125.0
-offset_top = -15.0
-offset_right = 125.0
-offset_bottom = 15.0
-grow_horizontal = 2
-grow_vertical = 2
+anchor_left = 0.01
+anchor_top = 0.95
+anchor_right = 0.01
+anchor_bottom = 0.95
+offset_top = -30.0
+offset_right = 260.0
+grow_vertical = 0
+show_percentage = false
+
+[node name="shurikenCdText" type="RichTextLabel" parent="hudLayer/cooldownUI"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.25
+anchor_top = 0.1
+anchor_right = 0.25
+anchor_bottom = 0.1
+offset_right = 130.0
+offset_bottom = 30.0
+pivot_offset = Vector2(65, 15)
+bbcode_enabled = true
+text = "[center] SHURIKEN"
 
 [connection signal="updateCooldown" from="." to="." method="_on_update_cooldown"]
