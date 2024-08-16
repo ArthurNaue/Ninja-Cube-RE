@@ -24,16 +24,20 @@ stream = ExtResource("2_cljmt")
 
 [node name="cooldownUI" type="ProgressBar" parent="hudLayer"]
 anchors_preset = -1
-anchor_left = 0.01
-anchor_top = 0.95
-anchor_right = 0.01
-anchor_bottom = 0.95
-offset_top = -30.0
-offset_right = 260.0
+anchor_left = 0.1
+anchor_top = 0.9
+anchor_right = 0.1
+anchor_bottom = 0.9
+offset_left = -38.88
+offset_top = -4.62001
+offset_right = 221.12
+offset_bottom = 25.38
 grow_vertical = 0
+scale = Vector2(0.3, 0.3)
 theme_override_styles/background = SubResource("StyleBoxFlat_ii5vc")
 theme_override_styles/fill = SubResource("StyleBoxFlat_5oi7d")
 show_percentage = false
+metadata/_edit_use_anchors_ = true
 
 [node name="shurikenCdText" type="RichTextLabel" parent="hudLayer/cooldownUI"]
 layout_mode = 1

@@ -64,7 +64,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(1.5, 1.5)]
+"values": [Vector2(0.5, 0.5)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -92,7 +92,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.1, 0.2),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [Vector2(1.5, 1.5), Vector2(2, 2), Vector2(1.5, 1.5)]
+"values": [Vector2(0.5, 0.5), Vector2(1, 1), Vector2(0.5, 0.5)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -127,6 +127,18 @@ tracks/0/keys = {
 "update": 0,
 "values": [Color(0.839216, 0.831373, 0.796078, 1)]
 }
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.5, 0.5)]
+}
 
 [sub_resource type="Animation" id="Animation_bq883"]
 resource_name = "updateHealth"
@@ -141,7 +153,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.1, 0.2),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [Vector2(1.5, 1.5), Vector2(2, 2), Vector2(1.5, 1.5)]
+"values": [Vector2(0.5, 0.5), Vector2(1, 1), Vector2(0.5, 0.5)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -188,7 +200,7 @@ position = Vector2(0, 1)
 shape = SubResource("RectangleShape2D_gi6pw")
 
 [node name="camera" type="Camera2D" parent="."]
-zoom = Vector2(2, 2)
+zoom = Vector2(0.5, 0.5)
 position_smoothing_speed = 20.0
 script = ExtResource("6_nt6iv")
 
@@ -206,13 +218,13 @@ position = Vector2(0, 2)
 [node name="healthUI" type="RichTextLabel" parent="hud"]
 modulate = Color(0.839216, 0.831373, 0.796078, 1)
 anchors_preset = -1
-anchor_left = 0.05
-anchor_top = 0.05
-anchor_right = 0.05
-anchor_bottom = 0.05
+anchor_left = 0.01
+anchor_top = 0.01
+anchor_right = 0.01
+anchor_bottom = 0.01
 offset_right = 40.0
 offset_bottom = 24.0
-scale = Vector2(1.5, 1.5)
+scale = Vector2(0.5, 0.5)
 pivot_offset = Vector2(20, 12)
 bbcode_enabled = true
 text = "[center]a"
@@ -226,14 +238,14 @@ libraries = {
 [node name="pointsUI" type="RichTextLabel" parent="hud"]
 modulate = Color(0.839216, 0.831373, 0.796078, 1)
 anchors_preset = -1
-anchor_left = 0.95
-anchor_top = 0.05
-anchor_right = 0.95
-anchor_bottom = 0.05
+anchor_left = 0.99
+anchor_top = 0.01
+anchor_right = 0.99
+anchor_bottom = 0.01
 offset_left = -40.0
 offset_bottom = 24.0
 grow_horizontal = 0
-scale = Vector2(1.5, 1.5)
+scale = Vector2(0.5, 0.5)
 pivot_offset = Vector2(20, 12)
 bbcode_enabled = true
 text = "[center]a"

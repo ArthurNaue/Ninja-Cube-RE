@@ -3,3 +3,7 @@ res://assets/images/gameManager/shaders/hit.tres
 res://scenes/level1/root/level1.tscn
 res://scenes/level1/entities/player/sword/root/sword.tscn
 res://scenes/level1/entities/enemies/normal/circle/root/circleEnemy.tscn
+res://scenes/level1/entities/player/root/player.tscn
+res://scenes/startScreen/root/startScreen.tscn
+res://scenes/deathScreen/root/deathScreen.tscn
+res://scripts/level1/entities/player/hud/healthUI/root/healthUI.gd
