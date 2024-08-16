@@ -22,11 +22,9 @@ GameManager="*res://scripts/gameManager/root/gameManager.gd"
 
 [display]
 
-window/size/viewport_width=480
-window/size/viewport_height=270
-window/size/window_width_override=1920
-window/size/window_height_override=1080
-window/stretch/mode="canvas_items"
+window/size/viewport_width=600
+window/size/viewport_height=600
+window/size/resizable=false
 
 [input]
 

@@ -492,16 +492,15 @@ stream = ExtResource("22_neld3")
 
 [node name="cooldownUI" type="ProgressBar" parent="hudLayer"]
 anchors_preset = -1
-anchor_left = 0.1
-anchor_top = 0.95
-anchor_right = 0.1
-anchor_bottom = 0.95
-offset_left = -130.08
-offset_top = -14.88
-offset_right = 129.92
-offset_bottom = 15.12
+anchor_left = 0.227
+anchor_top = 0.965
+anchor_right = 0.227
+anchor_bottom = 0.965
+offset_left = -130.2
+offset_top = -15.0
+offset_right = 130.0
+offset_bottom = 15.0
 grow_vertical = 0
-scale = Vector2(0.3, 0.3)
 pivot_offset = Vector2(130, 15)
 theme_override_styles/background = SubResource("StyleBoxFlat_0dxql")
 theme_override_styles/fill = SubResource("StyleBoxFlat_oacwd")

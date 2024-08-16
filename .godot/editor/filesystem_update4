@@ -1,7 +1,8 @@
-res://scenes/level1/root/level1.tscn
-res://assets/images/gameManager/shaders/hit.tres
-res://scenes/level1/entities/player/root/player.tscn
-res://scenes/level1/entities/player/sword/root/sword.tscn
-res://scenes/level1/entities/player/shuriken/root/shuriken.tscn
-res://scenes/startScreen/root/startScreen.tscn
 res://scenes/deathScreen/root/deathScreen.tscn
+res://assets/images/gameManager/shaders/hit.tres
+res://scenes/level1/root/level1.tscn
+res://scenes/level1/entities/player/sword/root/sword.tscn
+res://scenes/startScreen/root/startScreen.tscn
+res://scenes/level1/entities/player/root/player.tscn
+res://scenes/level1/entities/player/shuriken/root/shuriken.tscn
+res://scripts/level1/components/health/root/healthComponent.gd
