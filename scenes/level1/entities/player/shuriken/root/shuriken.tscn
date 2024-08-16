@@ -1,7 +1,18 @@
-[gd_scene load_steps=3 format=3 uid="uid://bj77v4tfok35s"]
+[gd_scene load_steps=5 format=3 uid="uid://bj77v4tfok35s"]
 
 [ext_resource type="Script" path="res://scripts/level1/entities/player/shuriken/root/shuriken.gd" id="1_t2hth"]
 [ext_resource type="AudioStream" uid="uid://cit4vdwj1jyhn" path="res://assets/audio/entities/player/shuriken/tpShoot/root/tpShootAudio.wav" id="2_cljmt"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ii5vc"]
+bg_color = Color(0.0627451, 0.0745098, 0.137255, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5oi7d"]
+bg_color = Color(0.443137, 0.0980392, 0.0980392, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.0627451, 0.0745098, 0.137255, 1)
 
 [node name="shuriken" type="Node2D" groups=["shuriken"]]
 script = ExtResource("1_t2hth")
@@ -20,6 +31,8 @@ anchor_bottom = 0.95
 offset_top = -30.0
 offset_right = 260.0
 grow_vertical = 0
+theme_override_styles/background = SubResource("StyleBoxFlat_ii5vc")
+theme_override_styles/fill = SubResource("StyleBoxFlat_5oi7d")
 show_percentage = false
 
 [node name="shurikenCdText" type="RichTextLabel" parent="hudLayer/cooldownUI"]
