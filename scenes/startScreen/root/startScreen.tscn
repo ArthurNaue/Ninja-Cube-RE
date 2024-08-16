@@ -1,8 +1,14 @@
-[gd_scene load_steps=4 format=3 uid="uid://f4shv8yibkpf"]
+[gd_scene load_steps=6 format=3 uid="uid://f4shv8yibkpf"]
 
 [ext_resource type="Script" path="res://scripts/startScreen/buttons/playButton/root/playButton.gd" id="1_1r4nc"]
 [ext_resource type="Script" path="res://scripts/startScreen/buttons/exitButton/root/exitButton.gd" id="2_hqsd2"]
 [ext_resource type="Script" path="res://scripts/startScreen/texts/bestScoreText/bestScoreText.gd" id="3_1nkgk"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5wfg1"]
+bg_color = Color(0.0627451, 0.0745098, 0.137255, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dt0kf"]
+bg_color = Color(0.0627451, 0.0745098, 0.137255, 1)
 
 [node name="startScreen" type="Node2D"]
 position = Vector2(-96, 25)
@@ -40,6 +46,8 @@ grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(0.5, 0.5)
 pivot_offset = Vector2(33, 33)
+theme_override_colors/font_color = Color(0.839216, 0.831373, 0.796078, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_5wfg1")
 text = "PLAY"
 script = ExtResource("1_1r4nc")
 
@@ -57,6 +65,8 @@ grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(0.5, 0.5)
 pivot_offset = Vector2(33, 33)
+theme_override_colors/font_color = Color(0.839216, 0.831373, 0.796078, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_dt0kf")
 text = "EXIT"
 script = ExtResource("2_hqsd2")
 

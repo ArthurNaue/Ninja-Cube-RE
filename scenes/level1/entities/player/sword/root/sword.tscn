@@ -517,6 +517,7 @@ anchor_bottom = 0.1
 offset_right = 130.0
 offset_bottom = 30.0
 pivot_offset = Vector2(65, 15)
+theme_override_colors/default_color = Color(0.839216, 0.831373, 0.796078, 1)
 bbcode_enabled = true
 text = "[center]SWORD SPECIAL"
 
