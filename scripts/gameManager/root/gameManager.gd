@@ -21,24 +21,32 @@ var enemyStats = [
 	diamondEnemyStats
 ]
 
+func _process(_delta: float):
+	#ajusta a velocidade dos sons
+	AudioServer.playback_speed_scale = gamePace
+
 func spawnEntitie(entitieScene: PackedScene, location: Vector2) -> void:
 	var entitie = entitieScene.instantiate()
 	currentLevel.call_deferred("add_child", entitie)
 	entitie.global_position = location
 
 func freeze_time() -> void:
+	#muta todos os sons
+	AudioServer.set_bus_mute(0, true)
 	#ativa a variavel de tempo parado
 	timeStopped = true
 	#para o tempo
 	for enemyStat in enemyStats:
 		enemyStat.moveSpeed = 0
 	#espera 5 segundos
-	await get_tree().create_timer(5).timeout
+	await get_tree().create_timer(5 * gamePace).timeout
 	#retorna o tempo
 	for enemyStat in enemyStats:
 		enemyStat.moveSpeed = 150
 	#desativa a variavel de tempo parado
 	timeStopped = false
+	#volta a tocar os sons
+	AudioServer.set_bus_mute(0, false)
 
 func nuke() -> void:
 	#cria um array com todos os inimigos

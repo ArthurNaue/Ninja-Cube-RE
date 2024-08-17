@@ -1,10 +1,11 @@
 res://scenes/level1/root/level1.tscn
 res://assets/images/gameManager/shaders/hit.tres
+res://scripts/level1/root/level1.gd
 res://scenes/level1/entities/player/root/player.tscn
-res://scenes/level1/entities/player/sword/root/sword.tscn
-res://scripts/level1/entities/player/sword/root/sword.gd
 res://scenes/level1/entities/player/shuriken/root/shuriken.tscn
-res://scripts/level1/entities/player/shuriken/root/shuriken.gd
-res://scripts/level1/entities/enemies/root/enemies.gd
-res://scripts/level1/components/health/root/healthComponent.gd
+res://scenes/level1/entities/player/sword/root/sword.tscn
+res://scenes/bgMusic/root/backgroundMusic.tscn
 res://scripts/level1/entities/player/root/player.gd
+res://scripts/gameManager/root/gameManager.gd
+res://default_bus_layout.tres
+res://scripts/level1/components/health/root/healthComponent.gd

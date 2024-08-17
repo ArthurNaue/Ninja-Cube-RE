@@ -53,12 +53,12 @@ func _physics_process(_delta) -> void:
 func speed_powerup() -> void:
 	boosted = true
 	stats.moveSpeed = 400
-	await get_tree().create_timer(5).timeout
+	await get_tree().create_timer(5 * GameManager.gamePace).timeout
 	stats.moveSpeed = 200
 	boosted = false
 
 func _on_dmg() -> void:
-	#toca o som de tomar dano
+		#toca o som de tomar dano
 		hitAudio.play()
 		#aplica o camera shake
 		camera.apply_shake(10.0)
