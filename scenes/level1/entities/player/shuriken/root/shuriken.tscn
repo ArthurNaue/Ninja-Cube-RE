@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://bj77v4tfok35s"]
+[gd_scene load_steps=6 format=3 uid="uid://bj77v4tfok35s"]
 
 [ext_resource type="Script" path="res://scripts/level1/entities/player/shuriken/root/shuriken.gd" id="1_t2hth"]
 [ext_resource type="AudioStream" uid="uid://cit4vdwj1jyhn" path="res://assets/audio/entities/player/shuriken/tpShoot/root/tpShootAudio.wav" id="2_cljmt"]
+[ext_resource type="AudioStream" uid="uid://bpseg6kbmw2wg" path="res://assets/audio/entities/player/shuriken/shootAudio/root/shurikenShoot.wav" id="3_2fa1y"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ii5vc"]
 bg_color = Color(0.0627451, 0.0745098, 0.137255, 1)
@@ -19,6 +20,9 @@ script = ExtResource("1_t2hth")
 
 [node name="tpShootAudio" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("2_cljmt")
+
+[node name="shootAudio" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_2fa1y")
 
 [node name="hudLayer" type="CanvasLayer" parent="."]
 

@@ -57,6 +57,8 @@ func update_health() -> void:
 	if health <= 0:
 		#verifica se a entidade e um inimigo
 		if parent.is_in_group("enemies"):
+			#toca o som de matar do player
+			player.killAudio.play()
 			#spawna o efeito de pontos
 			spawn_points_effect(parent.global_position, 1)
 			#diminui um no cooldown da espada

@@ -15,6 +15,7 @@ signal attackFinished()
 @onready var col = $hitbox/col
 @onready var healthUI = $hud/healthRect/healthUI
 @onready var hitAudio = $hitAudio
+@onready var killAudio = $killAudio
 @onready var camera = $camera
 @onready var anim = $anim
 @onready var game = get_tree().get_first_node_in_group("game")

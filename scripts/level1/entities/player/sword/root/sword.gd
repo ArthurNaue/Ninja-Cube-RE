@@ -9,7 +9,9 @@ signal updateCooldown(amount: int)
 @onready var attackAnim = $attackAnim
 @onready var sprite = $sprite
 @onready var chargeAudio = $chargeAudio
+@onready var attackAudio = $attackAudio
 @onready var cooldownUI = $hudLayer/cooldownUI
+@onready var chargedAttackAudio = $chargedAttackAudio
 @onready var maxCooldown := 3
 @onready var cooldown := 0
 
@@ -52,7 +54,10 @@ func _process(_delta: float) -> void:
 					if cooldown == maxCooldown:
 						#emite o sinal que o player comecou a atacar
 						player.attackStarted.emit()
+						#toca a animacao de ataque carregado
 						attackAnim.play("chargedAttack")
+						#toca o som do ataque carregado
+						chargedAttackAudio.play()
 						#habilita o ataque do player
 						player.attacking = true
 						#define a direcao do ataque
@@ -65,9 +70,11 @@ func _process(_delta: float) -> void:
 						#emite o sinal pra atualizar a barra de cooldown
 						updateCooldown.emit(0)
 					else:
+						attackAudio.play()
 						verifyDirection("unchargedAttack", "unchargedAttackLeft")
 						changeDirection()
 				else:
+					attackAudio.play()
 					verifyDirection("unchargedAttack", "unchargedAttackLeft")
 					changeDirection()
 

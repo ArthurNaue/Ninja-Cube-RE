@@ -12,6 +12,7 @@ const killEffectScene = preload("res://scenes/level1/entities/player/kill_effect
 @onready var game = get_tree().get_first_node_in_group("game")
 @onready var player = get_tree().get_first_node_in_group("player")
 @onready var tpShootAudio = $tpShootAudio
+@onready var shootAudio = $shootAudio
 @onready var cooldownUI = $hudLayer/cooldownUI
 @onready var canShoot = true
 @onready var maxCooldown := 5
@@ -35,6 +36,8 @@ func _physics_process(_delta) -> void:
 
 #funcao de atirar
 func shoot() -> void:
+	#toca o audio de atirar
+	shootAudio.play()
 	#desativa a habilidade de atirar
 	canShoot = false
 	#cria o objeto do tiro

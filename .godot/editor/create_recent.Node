@@ -1,3 +1,4 @@
+AudioStreamPlayer2D
 ColorRect
 RichTextLabel
 ProgressBar
@@ -9,6 +10,5 @@ CollisionShape2D
 AnimationPlayer
 CollisionPolygon2D
 Timer
-AudioStreamPlayer2D
 HitboxComponent
 StaticBody2D
