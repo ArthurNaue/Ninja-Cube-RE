@@ -1,9 +1,9 @@
+ColorRect
 RichTextLabel
 ProgressBar
 CanvasLayer
 Button
 VBoxContainer
-ColorRect
 Container
 CollisionShape2D
 AnimationPlayer

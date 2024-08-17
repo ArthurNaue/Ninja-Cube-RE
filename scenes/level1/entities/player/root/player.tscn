@@ -215,39 +215,59 @@ position = Vector2(0, 2)
 
 [node name="hud" type="CanvasLayer" parent="."]
 
-[node name="healthUI" type="RichTextLabel" parent="hud"]
+[node name="healthRect" type="ColorRect" parent="hud"]
+offset_left = 10.0
+offset_top = 10.0
+offset_right = 60.0
+offset_bottom = 60.0
+color = Color(0.0627451, 0.0745098, 0.137255, 1)
+
+[node name="healthUI" type="RichTextLabel" parent="hud/healthRect"]
 modulate = Color(0.839216, 0.831373, 0.796078, 1)
+layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.043
-anchor_top = 0.03
-anchor_right = 0.043
-anchor_bottom = 0.03
-offset_left = -19.8
-offset_top = -12.0
-offset_right = 20.2
-offset_bottom = 12.0
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -30.0
+offset_top = -15.0
+offset_right = 20.0
+offset_bottom = 22.0
 scale = Vector2(2, 2)
 pivot_offset = Vector2(20, 12)
 bbcode_enabled = true
 text = "[center]a"
 script = ExtResource("8_l1qkv")
 
-[node name="healthUpdateAnim" type="AnimationPlayer" parent="hud/healthUI"]
+[node name="healthUpdateAnim" type="AnimationPlayer" parent="hud/healthRect/healthUI"]
 libraries = {
 "": SubResource("AnimationLibrary_rseof")
 }
 
-[node name="pointsUI" type="RichTextLabel" parent="hud"]
+[node name="pointsRect" type="ColorRect" parent="hud"]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -60.0
+offset_top = 10.0
+offset_right = -10.0
+offset_bottom = 60.0
+grow_horizontal = 0
+color = Color(0.0627451, 0.0745098, 0.137255, 1)
+
+[node name="pointsUI" type="RichTextLabel" parent="hud/pointsRect"]
 modulate = Color(0.839216, 0.831373, 0.796078, 1)
+layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.957
-anchor_top = 0.03
-anchor_right = 0.957
-anchor_bottom = 0.03
-offset_left = -20.2
-offset_top = -12.0
-offset_right = 19.8
-offset_bottom = 12.0
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -30.0
+offset_top = -15.0
+offset_right = 20.0
+offset_bottom = 22.0
 grow_horizontal = 0
 scale = Vector2(2, 2)
 pivot_offset = Vector2(20, 12)
@@ -255,7 +275,7 @@ bbcode_enabled = true
 text = "[center]a"
 script = ExtResource("9_ak4hg")
 
-[node name="pointsUpdateAnim" type="AnimationPlayer" parent="hud/pointsUI"]
+[node name="pointsUpdateAnim" type="AnimationPlayer" parent="hud/pointsRect/pointsUI"]
 libraries = {
 "": SubResource("AnimationLibrary_86bpe")
 }
@@ -266,6 +286,6 @@ stream = ExtResource("10_ehnm2")
 [connection signal="attackFinished" from="." to="." method="_on_attack_finished"]
 [connection signal="attackStarted" from="." to="." method="_on_attack_started"]
 [connection signal="dmg" from="." to="." method="_on_dmg"]
-[connection signal="pointsUpdated" from="." to="hud/pointsUI" method="_on_player_points_updated"]
+[connection signal="pointsUpdated" from="." to="hud/pointsRect/pointsUI" method="_on_player_points_updated"]
 [connection signal="animation_finished" from="anim" to="." method="_on_anim_animation_finished"]
 [connection signal="healthUpdated" from="health" to="." method="_on_health_health_updated"]

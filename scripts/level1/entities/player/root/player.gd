@@ -13,7 +13,7 @@ signal attackFinished()
 #variaveis onready
 @onready var sprite = $sprite
 @onready var col = $hitbox/col
-@onready var healthUI = $hud/healthUI
+@onready var healthUI = $hud/healthRect/healthUI
 @onready var hitAudio = $hitAudio
 @onready var camera = $camera
 @onready var anim = $anim
