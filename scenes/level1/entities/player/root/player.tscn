@@ -200,6 +200,7 @@ position = Vector2(0, 1)
 shape = SubResource("RectangleShape2D_gi6pw")
 
 [node name="camera" type="Camera2D" parent="."]
+zoom = Vector2(2, 2)
 position_smoothing_speed = 20.0
 script = ExtResource("6_nt6iv")
 

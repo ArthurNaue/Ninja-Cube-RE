@@ -16,6 +16,7 @@ signal updateCooldown(amount: int)
 #variaveis
 var attacking: bool
 var attackPower: int
+var attackRightDirection := false
 
 func _ready() -> void:
 	#atualiza o valor maximo da barra de cooldown
@@ -39,8 +40,8 @@ func _process(_delta: float) -> void:
 				else:
 					#adiciona 5 ao poder de ataque
 					attackPower += 5
-					#toca a animacao de carregamento1
-					attackAnim.play("charge1")
+					#toca a animacao de carregamento
+					verifyDirection("charge1", "charge1Left")
 			#verifica se o m1 foi solto
 			elif Input.is_action_just_released("m1"):
 				#habilita o ataque
@@ -64,9 +65,11 @@ func _process(_delta: float) -> void:
 						#emite o sinal pra atualizar a barra de cooldown
 						updateCooldown.emit(0)
 					else:
-						attackAnim.play("unchargedAttack")
+						verifyDirection("unchargedAttack", "unchargedAttackLeft")
+						changeDirection()
 				else:
-					attackAnim.play("unchargedAttack")
+					verifyDirection("unchargedAttack", "unchargedAttackLeft")
+					changeDirection()
 
 func _on_attack_anim_animation_started(_anim) -> void:
 	#verifica se e a animacao de carregar 2
@@ -118,3 +121,17 @@ func _on_update_cooldown(amount: int) -> void:
 		cooldown += amount
 	#atualiza o valor da barra de cooldown
 	cooldownUI.value = cooldown
+
+func verifyDirection(animationRight: String, animationLeft: String) -> void:
+	match attackRightDirection:
+		true:
+			attackAnim.play(animationRight)
+		false:
+			attackAnim.play(animationLeft)
+
+func changeDirection() -> void:
+	match attackRightDirection:
+		true:
+			attackRightDirection = false
+		false:
+			attackRightDirection = true
