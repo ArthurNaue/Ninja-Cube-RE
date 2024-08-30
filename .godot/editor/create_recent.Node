@@ -1,3 +1,4 @@
+Timer
 AudioStreamPlayer2D
 ColorRect
 RichTextLabel
@@ -9,6 +10,5 @@ Container
 CollisionShape2D
 AnimationPlayer
 CollisionPolygon2D
-Timer
 HitboxComponent
 StaticBody2D

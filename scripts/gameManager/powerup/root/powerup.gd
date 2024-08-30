@@ -12,6 +12,7 @@ const nukeSprite = preload("res://assets/images/gameManager/powerup/nuke/root/nu
 @onready var powerupSprite = $powerupSprite
 @onready var pickupSound = $pickupSound
 @onready var col = $hitbox/col
+@onready var anim = $anim
 @onready var player = get_tree().get_first_node_in_group("player")
 @onready var playerHealth = player.get_node("health")
 @onready var playerHitbox = player.get_node("hitbox")
@@ -107,3 +108,12 @@ func set_powerup() -> String:
 			powerupSprite.texture = nukeSprite
 	#retorna o powerup escolhido
 	return chosenPowerup
+
+#funcao que desabilita o powerup
+func _on_disable_timer_timeout() -> void:
+	#toca a animacao de desaparecer
+	anim.play("disable")
+	#espera 30 segundos
+	await get_tree().create_timer(30).timeout
+	#deleta o objeto de powerup
+	queue_free()
