@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://5d0l03dmc5cv"
-path="res://.godot/imported/chargedSwordEffect.png-e8b6284f2b59403dbb23bf017ec37db7.ctex"
+uid="uid://n4cn0dhh1n3p"
+path="res://.godot/imported/redSwordChargedEffect.png-84cb5471c146d7d9f8d835ccdcc9fabc.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/images/gameManager/entities/player/sword/effect/charged/chargedSwordEffect.png"
-dest_files=["res://.godot/imported/chargedSwordEffect.png-e8b6284f2b59403dbb23bf017ec37db7.ctex"]
+source_file="res://assets/images/gameManager/entities/player/sword/effect/charged/red/redSwordChargedEffect.png"
+dest_files=["res://.godot/imported/redSwordChargedEffect.png-84cb5471c146d7d9f8d835ccdcc9fabc.ctex"]
 
 [params]
 

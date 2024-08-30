@@ -55,7 +55,7 @@ func _process(_delta: float) -> void:
 						#emite o sinal que o player comecou a atacar
 						player.attackStarted.emit()
 						#toca a animacao de ataque carregado
-						attackAnim.play("chargedAttack")
+						verifyDirection("chargedAttack", "chargedAttackLeft")
 						#toca o som do ataque carregado
 						chargedAttackAudio.play()
 						#habilita o ataque do player
@@ -86,7 +86,7 @@ func _on_attack_anim_animation_started(_anim) -> void:
 
 func _on_attack_anim_animation_finished(_anim) -> void:
 	#verifica se e a animacao de ataque carregado
-	if _anim == "chargedAttack":
+	if _anim == "chargedAttack" or _anim == "chargedAttackLeft":
 		#ativa a visibilidade do player
 		player.get_node("sprite").visible = true
 		#emite o sinal que o ataque acabou

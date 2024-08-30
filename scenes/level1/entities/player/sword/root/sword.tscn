@@ -1,9 +1,10 @@
-[gd_scene load_steps=55 format=3 uid="uid://b3exsrvf730c2"]
+[gd_scene load_steps=57 format=3 uid="uid://b3exsrvf730c2"]
 
 [ext_resource type="Script" path="res://scripts/level1/entities/player/sword/root/sword.gd" id="1_fq8c6"]
 [ext_resource type="Texture2D" uid="uid://dils72k7o66uv" path="res://assets/images/gameManager/entities/player/sword/root/white/whiteSword.png" id="2_jhp1r"]
 [ext_resource type="Script" path="res://scripts/level1/components/hitbox/root/hitboxComponent.gd" id="3_ge17k"]
 [ext_resource type="Texture2D" uid="uid://ykxg1hk4nwxd" path="res://assets/images/gameManager/entities/player/sword/effect/uncharged/white/unchargedSwordEffect.png" id="3_uu22d"]
+[ext_resource type="Texture2D" uid="uid://b3ji4bdg0lhsg" path="res://assets/images/gameManager/entities/player/sword/effect/charged/white/whiteSwordChargedEffect.png" id="4_ck51s"]
 [ext_resource type="Texture2D" uid="uid://cjjfi6nh081jb" path="res://assets/images/gameManager/entities/player/sword/charge/white/swordCharge1.png" id="6_7jglj"]
 [ext_resource type="Texture2D" uid="uid://cr006d1ujk7yy" path="res://assets/images/gameManager/entities/player/sword/charge/white/swordCharge2.png" id="7_hgyc4"]
 [ext_resource type="Texture2D" uid="uid://bjoqrvpxx0irb" path="res://assets/images/gameManager/entities/player/sword/charge/white/swordCharge3.png" id="8_t4yv6"]
@@ -19,7 +20,6 @@
 [ext_resource type="Texture2D" uid="uid://cepny5hawrr7" path="res://assets/images/gameManager/entities/player/sword/charge/white/swordCharge13.png" id="18_hqhbj"]
 [ext_resource type="Texture2D" uid="uid://c7pkaar7osa1d" path="res://assets/images/gameManager/entities/player/sword/charge/white/swordCharge14.png" id="19_oe0kr"]
 [ext_resource type="Texture2D" uid="uid://brdwdbfj5q8ia" path="res://assets/images/gameManager/entities/player/sword/charge/white/swordCharge15.png" id="20_5sjlq"]
-[ext_resource type="Texture2D" uid="uid://5d0l03dmc5cv" path="res://assets/images/gameManager/entities/player/sword/effect/charged/chargedSwordEffect.png" id="20_215cq"]
 [ext_resource type="Texture2D" uid="uid://bfi478000mofv" path="res://assets/images/gameManager/entities/player/sword/effect/uncharged/red/unchargedRedSwordEffect.png" id="21_6t2kl"]
 [ext_resource type="Texture2D" uid="uid://bm4xvur4hm2ns" path="res://assets/images/gameManager/entities/player/sword/charge/white/swordCharge16.png" id="21_b1dae"]
 [ext_resource type="Texture2D" uid="uid://bw4q6frgsv44s" path="res://assets/images/gameManager/entities/player/sword/root/red/redSword.png" id="21_y81r7"]
@@ -42,6 +42,7 @@
 [ext_resource type="Texture2D" uid="uid://cpqxikuxirmq8" path="res://assets/images/gameManager/entities/player/sword/charge/red/redSwordCharge14.png" id="36_yyo2q"]
 [ext_resource type="Texture2D" uid="uid://ce3m18qyufs0b" path="res://assets/images/gameManager/entities/player/sword/charge/red/redSwordCharge15.png" id="37_de21w"]
 [ext_resource type="Texture2D" uid="uid://bhsbsgbbwabov" path="res://assets/images/gameManager/entities/player/sword/charge/red/redSwordCharge16.png" id="38_dpy3j"]
+[ext_resource type="Texture2D" uid="uid://n4cn0dhh1n3p" path="res://assets/images/gameManager/entities/player/sword/effect/charged/red/redSwordChargedEffect.png" id="39_al78t"]
 
 [sub_resource type="Animation" id="Animation_lgndl"]
 length = 0.001
@@ -168,38 +169,38 @@ tracks/9/keys = {
 tracks/10/type = "value"
 tracks/10/imported = false
 tracks/10/enabled = true
-tracks/10/path = NodePath("chargedSwordEffect:frame")
+tracks/10/path = NodePath("swordSprite:scale")
 tracks/10/interp = 1
 tracks/10/loop_wrap = true
 tracks/10/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [0]
+"update": 0,
+"values": [Vector2(1, 1)]
 }
 tracks/11/type = "value"
 tracks/11/imported = false
 tracks/11/enabled = true
-tracks/11/path = NodePath("swordSprite:scale")
+tracks/11/path = NodePath("unchargedSwordEffect:texture")
 tracks/11/interp = 1
 tracks/11/loop_wrap = true
 tracks/11/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(1, 1)]
+"update": 1,
+"values": [ExtResource("3_uu22d")]
 }
 tracks/12/type = "value"
 tracks/12/imported = false
 tracks/12/enabled = true
-tracks/12/path = NodePath("unchargedSwordEffect:texture")
+tracks/12/path = NodePath("chargedSwordEffect:texture")
 tracks/12/interp = 1
 tracks/12/loop_wrap = true
 tracks/12/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [ExtResource("3_uu22d")]
+"values": [ExtResource("4_ck51s")]
 }
 
 [sub_resource type="Animation" id="Animation_ig7gq"]
@@ -349,6 +350,23 @@ tracks/0/keys = {
 "values": [ExtResource("6_7jglj"), ExtResource("7_hgyc4"), ExtResource("8_t4yv6"), ExtResource("9_5eyoj"), ExtResource("10_n43ie"), ExtResource("11_n2olg"), ExtResource("12_baqi1"), ExtResource("13_73dcx"), ExtResource("14_w4u1a"), ExtResource("15_v7hrn"), ExtResource("16_85boe"), ExtResource("17_06p41"), ExtResource("18_hqhbj"), ExtResource("19_oe0kr"), ExtResource("20_5sjlq"), ExtResource("21_b1dae")]
 }
 
+[sub_resource type="Animation" id="Animation_pavwn"]
+resource_name = "charge"
+length = 1.5
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("swordSprite:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.1, 1.2, 1.3, 1.4, 1.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("23_q13oh"), ExtResource("24_8lnqu"), ExtResource("25_cj208"), ExtResource("26_628oo"), ExtResource("27_1juc0"), ExtResource("28_ncypd"), ExtResource("29_r84ln"), ExtResource("30_6k54t"), ExtResource("31_i12fx"), ExtResource("32_ndkpg"), ExtResource("33_mlngk"), ExtResource("34_r2etg"), ExtResource("35_wde84"), ExtResource("36_yyo2q"), ExtResource("37_de21w"), ExtResource("38_dpy3j")]
+}
+
 [sub_resource type="Animation" id="Animation_r7v4o"]
 resource_name = "unchargedAttack"
 length = 0.2
@@ -356,98 +374,74 @@ step = 0.01
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("swordSprite:position")
+tracks/0/path = NodePath("swordSprite:visible")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [Vector2(-20, -15), Vector2(20, 0), Vector2(-20, 15)]
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("swordSprite:rotation")
+tracks/1/path = NodePath("chargedSwordEffect:visible")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [-1.5708, 0.785398, 4.53786]
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("swordSprite:visible")
+tracks/2/path = NodePath("hitbox/col:disabled")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
 "times": PackedFloat32Array(0, 0.2),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
-"values": [true, false]
+"values": [false, true]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("chargedSwordEffect:visible")
+tracks/3/path = NodePath("hitbox/col:position")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(0, 0.2),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [true, false]
-}
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("hitbox/col:disabled")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(0, 0.2),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [false, true]
-}
-tracks/5/type = "value"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath("hitbox/col:position")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Vector2(0, -1.5)]
 }
-tracks/6/type = "value"
-tracks/6/imported = false
-tracks/6/enabled = true
-tracks/6/path = NodePath("hitbox/col:scale")
-tracks/6/interp = 1
-tracks/6/loop_wrap = true
-tracks/6/keys = {
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("hitbox/col:scale")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Vector2(1, 4.5)]
 }
-tracks/7/type = "value"
-tracks/7/imported = false
-tracks/7/enabled = true
-tracks/7/path = NodePath("chargedSwordEffect:frame")
-tracks/7/interp = 1
-tracks/7/loop_wrap = true
-tracks/7/keys = {
-"times": PackedFloat32Array(0, 0.01, 0.02, 0.03, 0.04, 0.05, 0.06, 0.07, 0.08, 0.09, 0.1, 0.11),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("chargedSwordEffect:texture")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 10]
+"values": [ExtResource("4_ck51s")]
 }
 
 [sub_resource type="Animation" id="Animation_dmfon"]
@@ -722,21 +716,81 @@ tracks/10/keys = {
 "values": [ExtResource("21_y81r7")]
 }
 
-[sub_resource type="Animation" id="Animation_pavwn"]
-resource_name = "charge"
-length = 1.5
-loop_mode = 1
+[sub_resource type="Animation" id="Animation_7eiij"]
+resource_name = "unchargedAttack"
+length = 0.2
+step = 0.01
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("swordSprite:texture")
+tracks/0/path = NodePath("swordSprite:visible")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.1, 1.2, 1.3, 1.4, 1.5),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [ExtResource("23_q13oh"), ExtResource("24_8lnqu"), ExtResource("25_cj208"), ExtResource("26_628oo"), ExtResource("27_1juc0"), ExtResource("28_ncypd"), ExtResource("29_r84ln"), ExtResource("30_6k54t"), ExtResource("31_i12fx"), ExtResource("32_ndkpg"), ExtResource("33_mlngk"), ExtResource("34_r2etg"), ExtResource("35_wde84"), ExtResource("36_yyo2q"), ExtResource("37_de21w"), ExtResource("38_dpy3j")]
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("chargedSwordEffect:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("hitbox/col:disabled")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("hitbox/col:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, -1.5)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("hitbox/col:scale")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 4.5)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("chargedSwordEffect:texture")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("39_al78t")]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_6o0ji"]
@@ -747,6 +801,7 @@ _data = {
 "charge2": SubResource("Animation_4uqqo"),
 "charge2Left": SubResource("Animation_pavwn"),
 "chargedAttack": SubResource("Animation_r7v4o"),
+"chargedAttackLeft": SubResource("Animation_7eiij"),
 "unchargedAttack": SubResource("Animation_dmfon"),
 "unchargedAttackLeft": SubResource("Animation_bn63b")
 }
@@ -781,8 +836,7 @@ texture = ExtResource("3_uu22d")
 
 [node name="chargedSwordEffect" type="Sprite2D" parent="."]
 visible = false
-texture = ExtResource("20_215cq")
-hframes = 11
+texture = ExtResource("4_ck51s")
 
 [node name="attackAnim" type="AnimationPlayer" parent="."]
 libraries = {
