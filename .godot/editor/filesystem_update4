@@ -4,3 +4,5 @@ res://assets/images/gameManager/shaders/hit.tres
 res://scenes/level1/root/level1.tscn
 res://scenes/level1/entities/player/root/player.tscn
 res://scripts/level1/components/health/root/healthComponent.gd
+res://scenes/level1/entities/player/sword/root/sword.tscn
+res://scripts/level1/entities/player/sword/root/sword.gd

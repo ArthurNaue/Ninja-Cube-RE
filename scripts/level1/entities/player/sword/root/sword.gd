@@ -7,7 +7,7 @@ signal updateCooldown(amount: int)
 #variaveis onready
 @onready var player = get_tree().get_first_node_in_group("player")
 @onready var attackAnim = $attackAnim
-@onready var sprite = $sprite
+@onready var sprite = $swordSprite
 @onready var chargeAudio = $chargeAudio
 @onready var attackAudio = $attackAudio
 @onready var cooldownUI = $hudLayer/cooldownUI
@@ -37,8 +37,8 @@ func _process(_delta: float) -> void:
 				if attackPower >= 1500:
 					#verifica se o cooldown acabou
 					if cooldown == maxCooldown:
-						#toca a animacao de carregamento2
-						attackAnim.play("charge2")
+						#toca a animacao de carregamento 2
+						verifyDirection("charge2", "charge2Left")
 				else:
 					#adiciona 5 ao poder de ataque
 					attackPower += 5

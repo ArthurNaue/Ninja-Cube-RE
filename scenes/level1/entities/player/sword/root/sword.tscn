@@ -1,48 +1,66 @@
-[gd_scene load_steps=36 format=3 uid="uid://b3exsrvf730c2"]
+[gd_scene load_steps=55 format=3 uid="uid://b3exsrvf730c2"]
 
 [ext_resource type="Script" path="res://scripts/level1/entities/player/sword/root/sword.gd" id="1_fq8c6"]
-[ext_resource type="Texture2D" uid="uid://cjjfi6nh081jb" path="res://assets/images/gameManager/entities/player/sword/charge/swordCharge1.png" id="2_5s2s6"]
-[ext_resource type="Texture2D" uid="uid://dils72k7o66uv" path="res://assets/images/gameManager/entities/player/sword/root/sword.png" id="2_s3s2n"]
+[ext_resource type="Texture2D" uid="uid://dils72k7o66uv" path="res://assets/images/gameManager/entities/player/sword/root/white/whiteSword.png" id="2_jhp1r"]
 [ext_resource type="Script" path="res://scripts/level1/components/hitbox/root/hitboxComponent.gd" id="3_ge17k"]
-[ext_resource type="Texture2D" uid="uid://ykxg1hk4nwxd" path="res://assets/images/gameManager/entities/player/sword/effect/uncharged/unchargedSwordEffect.png" id="3_ndekn"]
-[ext_resource type="Texture2D" uid="uid://cr006d1ujk7yy" path="res://assets/images/gameManager/entities/player/sword/charge/swordCharge2.png" id="3_txxnp"]
-[ext_resource type="Texture2D" uid="uid://bjoqrvpxx0irb" path="res://assets/images/gameManager/entities/player/sword/charge/swordCharge3.png" id="4_w5mg4"]
-[ext_resource type="Texture2D" uid="uid://bpir2fo1jx2r7" path="res://assets/images/gameManager/entities/player/sword/charge/swordCharge4.png" id="5_1svvu"]
-[ext_resource type="Texture2D" uid="uid://40dyuk8dbjp3" path="res://assets/images/gameManager/entities/player/sword/charge/swordCharge5.png" id="6_d0ry5"]
-[ext_resource type="Texture2D" uid="uid://c8cycu22kdo0k" path="res://assets/images/gameManager/entities/player/sword/charge/swordCharge6.png" id="7_71a87"]
-[ext_resource type="Texture2D" uid="uid://cdwc1h3gmtn86" path="res://assets/images/gameManager/entities/player/sword/charge/swordCharge7.png" id="8_l5de2"]
-[ext_resource type="Texture2D" uid="uid://re77iuap8suv" path="res://assets/images/gameManager/entities/player/sword/charge/swordCharge8.png" id="9_xty30"]
-[ext_resource type="Texture2D" uid="uid://cl5qhkvciwj0p" path="res://assets/images/gameManager/entities/player/sword/charge/swordCharge9.png" id="10_kkxjt"]
-[ext_resource type="Texture2D" uid="uid://d4e23u6w6b5jk" path="res://assets/images/gameManager/entities/player/sword/charge/swordCharge10.png" id="11_p10sb"]
-[ext_resource type="Texture2D" uid="uid://bqt41acch4v2b" path="res://assets/images/gameManager/entities/player/sword/charge/swordCharge11.png" id="12_pbsjh"]
-[ext_resource type="Texture2D" uid="uid://vui1hw8xbkcv" path="res://assets/images/gameManager/entities/player/sword/charge/swordCharge12.png" id="13_iiooe"]
-[ext_resource type="Texture2D" uid="uid://cepny5hawrr7" path="res://assets/images/gameManager/entities/player/sword/charge/swordCharge13.png" id="14_ubcbh"]
-[ext_resource type="Texture2D" uid="uid://c7pkaar7osa1d" path="res://assets/images/gameManager/entities/player/sword/charge/swordCharge14.png" id="15_pew3u"]
-[ext_resource type="Texture2D" uid="uid://brdwdbfj5q8ia" path="res://assets/images/gameManager/entities/player/sword/charge/swordCharge15.png" id="16_ut7qy"]
-[ext_resource type="Texture2D" uid="uid://bm4xvur4hm2ns" path="res://assets/images/gameManager/entities/player/sword/charge/swordCharge16.png" id="17_w2jo7"]
+[ext_resource type="Texture2D" uid="uid://ykxg1hk4nwxd" path="res://assets/images/gameManager/entities/player/sword/effect/uncharged/white/unchargedSwordEffect.png" id="3_uu22d"]
+[ext_resource type="Texture2D" uid="uid://cjjfi6nh081jb" path="res://assets/images/gameManager/entities/player/sword/charge/white/swordCharge1.png" id="6_7jglj"]
+[ext_resource type="Texture2D" uid="uid://cr006d1ujk7yy" path="res://assets/images/gameManager/entities/player/sword/charge/white/swordCharge2.png" id="7_hgyc4"]
+[ext_resource type="Texture2D" uid="uid://bjoqrvpxx0irb" path="res://assets/images/gameManager/entities/player/sword/charge/white/swordCharge3.png" id="8_t4yv6"]
+[ext_resource type="Texture2D" uid="uid://bpir2fo1jx2r7" path="res://assets/images/gameManager/entities/player/sword/charge/white/swordCharge4.png" id="9_5eyoj"]
+[ext_resource type="Texture2D" uid="uid://40dyuk8dbjp3" path="res://assets/images/gameManager/entities/player/sword/charge/white/swordCharge5.png" id="10_n43ie"]
+[ext_resource type="Texture2D" uid="uid://c8cycu22kdo0k" path="res://assets/images/gameManager/entities/player/sword/charge/white/swordCharge6.png" id="11_n2olg"]
+[ext_resource type="Texture2D" uid="uid://cdwc1h3gmtn86" path="res://assets/images/gameManager/entities/player/sword/charge/white/swordCharge7.png" id="12_baqi1"]
+[ext_resource type="Texture2D" uid="uid://re77iuap8suv" path="res://assets/images/gameManager/entities/player/sword/charge/white/swordCharge8.png" id="13_73dcx"]
+[ext_resource type="Texture2D" uid="uid://cl5qhkvciwj0p" path="res://assets/images/gameManager/entities/player/sword/charge/white/swordCharge9.png" id="14_w4u1a"]
+[ext_resource type="Texture2D" uid="uid://d4e23u6w6b5jk" path="res://assets/images/gameManager/entities/player/sword/charge/white/swordCharge10.png" id="15_v7hrn"]
+[ext_resource type="Texture2D" uid="uid://bqt41acch4v2b" path="res://assets/images/gameManager/entities/player/sword/charge/white/swordCharge11.png" id="16_85boe"]
+[ext_resource type="Texture2D" uid="uid://vui1hw8xbkcv" path="res://assets/images/gameManager/entities/player/sword/charge/white/swordCharge12.png" id="17_06p41"]
+[ext_resource type="Texture2D" uid="uid://cepny5hawrr7" path="res://assets/images/gameManager/entities/player/sword/charge/white/swordCharge13.png" id="18_hqhbj"]
+[ext_resource type="Texture2D" uid="uid://c7pkaar7osa1d" path="res://assets/images/gameManager/entities/player/sword/charge/white/swordCharge14.png" id="19_oe0kr"]
+[ext_resource type="Texture2D" uid="uid://brdwdbfj5q8ia" path="res://assets/images/gameManager/entities/player/sword/charge/white/swordCharge15.png" id="20_5sjlq"]
 [ext_resource type="Texture2D" uid="uid://5d0l03dmc5cv" path="res://assets/images/gameManager/entities/player/sword/effect/charged/chargedSwordEffect.png" id="20_215cq"]
+[ext_resource type="Texture2D" uid="uid://bfi478000mofv" path="res://assets/images/gameManager/entities/player/sword/effect/uncharged/red/unchargedRedSwordEffect.png" id="21_6t2kl"]
+[ext_resource type="Texture2D" uid="uid://bm4xvur4hm2ns" path="res://assets/images/gameManager/entities/player/sword/charge/white/swordCharge16.png" id="21_b1dae"]
+[ext_resource type="Texture2D" uid="uid://bw4q6frgsv44s" path="res://assets/images/gameManager/entities/player/sword/root/red/redSword.png" id="21_y81r7"]
 [ext_resource type="AudioStream" uid="uid://btkccnehpvrr2" path="res://assets/audio/entities/player/sword/charge/root/chargeAudio.wav" id="22_neld3"]
 [ext_resource type="AudioStream" uid="uid://cb2yvhwg1ukot" path="res://assets/audio/entities/player/sword/charge/attack/root/chargedAttackAudio.wav" id="23_5ti6q"]
+[ext_resource type="Texture2D" uid="uid://bh3xncei4gsl6" path="res://assets/images/gameManager/entities/player/sword/charge/red/redSwordCharge1.png" id="23_q13oh"]
+[ext_resource type="Texture2D" uid="uid://yauhfmq6nna7" path="res://assets/images/gameManager/entities/player/sword/charge/red/redSwordCharge2.png" id="24_8lnqu"]
 [ext_resource type="AudioStream" uid="uid://x2rww5oyy80g" path="res://assets/audio/entities/player/sword/attack/root/swordAttack.wav" id="24_l1o2w"]
+[ext_resource type="Texture2D" uid="uid://bi8eyo8xm8suq" path="res://assets/images/gameManager/entities/player/sword/charge/red/redSwordCharge3.png" id="25_cj208"]
+[ext_resource type="Texture2D" uid="uid://d3ep0l5x8nium" path="res://assets/images/gameManager/entities/player/sword/charge/red/redSwordCharge4.png" id="26_628oo"]
+[ext_resource type="Texture2D" uid="uid://cfp6ig4p1re67" path="res://assets/images/gameManager/entities/player/sword/charge/red/redSwordCharge5.png" id="27_1juc0"]
+[ext_resource type="Texture2D" uid="uid://ckysgg7nh3roq" path="res://assets/images/gameManager/entities/player/sword/charge/red/redSwordCharge6.png" id="28_ncypd"]
+[ext_resource type="Texture2D" uid="uid://cqr75rhvalyd3" path="res://assets/images/gameManager/entities/player/sword/charge/red/redSwordCharge7.png" id="29_r84ln"]
+[ext_resource type="Texture2D" uid="uid://bcr2gki4tkfmi" path="res://assets/images/gameManager/entities/player/sword/charge/red/redSwordCharge8.png" id="30_6k54t"]
+[ext_resource type="Texture2D" uid="uid://d0abucj37fq18" path="res://assets/images/gameManager/entities/player/sword/charge/red/redSwordCharge9.png" id="31_i12fx"]
+[ext_resource type="Texture2D" uid="uid://br6orkq5kr0o" path="res://assets/images/gameManager/entities/player/sword/charge/red/redSwordCharge10.png" id="32_ndkpg"]
+[ext_resource type="Texture2D" uid="uid://dykia420o5t5l" path="res://assets/images/gameManager/entities/player/sword/charge/red/redSwordCharge11.png" id="33_mlngk"]
+[ext_resource type="Texture2D" uid="uid://bgj6a5jrgf0w6" path="res://assets/images/gameManager/entities/player/sword/charge/red/redSwordCharge12.png" id="34_r2etg"]
+[ext_resource type="Texture2D" uid="uid://bevwiler4qtv2" path="res://assets/images/gameManager/entities/player/sword/charge/red/redSwordCharge13.png" id="35_wde84"]
+[ext_resource type="Texture2D" uid="uid://cpqxikuxirmq8" path="res://assets/images/gameManager/entities/player/sword/charge/red/redSwordCharge14.png" id="36_yyo2q"]
+[ext_resource type="Texture2D" uid="uid://ce3m18qyufs0b" path="res://assets/images/gameManager/entities/player/sword/charge/red/redSwordCharge15.png" id="37_de21w"]
+[ext_resource type="Texture2D" uid="uid://bhsbsgbbwabov" path="res://assets/images/gameManager/entities/player/sword/charge/red/redSwordCharge16.png" id="38_dpy3j"]
 
 [sub_resource type="Animation" id="Animation_lgndl"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("sprite:texture")
+tracks/0/path = NodePath("swordSprite:texture")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [ExtResource("2_s3s2n")]
+"values": [ExtResource("2_jhp1r")]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("sprite:position")
+tracks/1/path = NodePath("swordSprite:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -54,7 +72,7 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("sprite:rotation")
+tracks/2/path = NodePath("swordSprite:rotation")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -66,7 +84,7 @@ tracks/2/keys = {
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("sprite:visible")
+tracks/3/path = NodePath("swordSprite:visible")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
@@ -162,7 +180,7 @@ tracks/10/keys = {
 tracks/11/type = "value"
 tracks/11/imported = false
 tracks/11/enabled = true
-tracks/11/path = NodePath("sprite:scale")
+tracks/11/path = NodePath("swordSprite:scale")
 tracks/11/interp = 1
 tracks/11/loop_wrap = true
 tracks/11/keys = {
@@ -170,6 +188,18 @@ tracks/11/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Vector2(1, 1)]
+}
+tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("unchargedSwordEffect:texture")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("3_uu22d")]
 }
 
 [sub_resource type="Animation" id="Animation_ig7gq"]
@@ -179,7 +209,7 @@ loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("sprite:position")
+tracks/0/path = NodePath("swordSprite:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -191,7 +221,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("sprite:rotation")
+tracks/1/path = NodePath("swordSprite:rotation")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -203,7 +233,7 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("sprite:visible")
+tracks/2/path = NodePath("swordSprite:visible")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -215,19 +245,19 @@ tracks/2/keys = {
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("sprite:texture")
+tracks/3/path = NodePath("swordSprite:texture")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [ExtResource("2_s3s2n")]
+"values": [ExtResource("2_jhp1r")]
 }
 tracks/4/type = "value"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("sprite:scale")
+tracks/4/path = NodePath("swordSprite:scale")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
@@ -244,7 +274,7 @@ loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("sprite:position")
+tracks/0/path = NodePath("swordSprite:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -256,7 +286,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("sprite:rotation")
+tracks/1/path = NodePath("swordSprite:rotation")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -268,7 +298,7 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("sprite:visible")
+tracks/2/path = NodePath("swordSprite:visible")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -280,19 +310,19 @@ tracks/2/keys = {
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("sprite:texture")
+tracks/3/path = NodePath("swordSprite:texture")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [ExtResource("2_s3s2n")]
+"values": [ExtResource("21_y81r7")]
 }
 tracks/4/type = "value"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("sprite:scale")
+tracks/4/path = NodePath("swordSprite:scale")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
@@ -309,14 +339,14 @@ loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("sprite:texture")
+tracks/0/path = NodePath("swordSprite:texture")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.1, 1.2, 1.3, 1.4, 1.5),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 1,
-"values": [ExtResource("2_5s2s6"), ExtResource("3_txxnp"), ExtResource("4_w5mg4"), ExtResource("5_1svvu"), ExtResource("6_d0ry5"), ExtResource("7_71a87"), ExtResource("8_l5de2"), ExtResource("9_xty30"), ExtResource("10_kkxjt"), ExtResource("11_p10sb"), ExtResource("12_pbsjh"), ExtResource("13_iiooe"), ExtResource("14_ubcbh"), ExtResource("15_pew3u"), ExtResource("16_ut7qy"), ExtResource("17_w2jo7")]
+"values": [ExtResource("6_7jglj"), ExtResource("7_hgyc4"), ExtResource("8_t4yv6"), ExtResource("9_5eyoj"), ExtResource("10_n43ie"), ExtResource("11_n2olg"), ExtResource("12_baqi1"), ExtResource("13_73dcx"), ExtResource("14_w4u1a"), ExtResource("15_v7hrn"), ExtResource("16_85boe"), ExtResource("17_06p41"), ExtResource("18_hqhbj"), ExtResource("19_oe0kr"), ExtResource("20_5sjlq"), ExtResource("21_b1dae")]
 }
 
 [sub_resource type="Animation" id="Animation_r7v4o"]
@@ -326,7 +356,7 @@ step = 0.01
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("sprite:position")
+tracks/0/path = NodePath("swordSprite:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -338,7 +368,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("sprite:rotation")
+tracks/1/path = NodePath("swordSprite:rotation")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -350,7 +380,7 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("sprite:visible")
+tracks/2/path = NodePath("swordSprite:visible")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -426,7 +456,7 @@ length = 0.2
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("sprite:position")
+tracks/0/path = NodePath("swordSprite:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -438,7 +468,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("sprite:rotation")
+tracks/1/path = NodePath("swordSprite:rotation")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -450,7 +480,7 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("sprite:visible")
+tracks/2/path = NodePath("swordSprite:visible")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -522,7 +552,7 @@ tracks/7/keys = {
 tracks/8/type = "value"
 tracks/8/imported = false
 tracks/8/enabled = true
-tracks/8/path = NodePath("sprite:scale")
+tracks/8/path = NodePath("swordSprite:scale")
 tracks/8/interp = 1
 tracks/8/loop_wrap = true
 tracks/8/keys = {
@@ -531,6 +561,30 @@ tracks/8/keys = {
 "update": 0,
 "values": [Vector2(1, 1)]
 }
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("unchargedSwordEffect:texture")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("3_uu22d")]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("swordSprite:texture")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("2_jhp1r")]
+}
 
 [sub_resource type="Animation" id="Animation_bn63b"]
 resource_name = "unchargedAttack"
@@ -538,7 +592,7 @@ length = 0.2
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("sprite:position")
+tracks/0/path = NodePath("swordSprite:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -550,7 +604,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("sprite:rotation")
+tracks/1/path = NodePath("swordSprite:rotation")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -562,7 +616,7 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("sprite:visible")
+tracks/2/path = NodePath("swordSprite:visible")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -634,7 +688,7 @@ tracks/7/keys = {
 tracks/8/type = "value"
 tracks/8/imported = false
 tracks/8/enabled = true
-tracks/8/path = NodePath("sprite:scale")
+tracks/8/path = NodePath("swordSprite:scale")
 tracks/8/interp = 1
 tracks/8/loop_wrap = true
 tracks/8/keys = {
@@ -643,6 +697,47 @@ tracks/8/keys = {
 "update": 0,
 "values": [Vector2(-1, 1)]
 }
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("unchargedSwordEffect:texture")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("21_6t2kl")]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("swordSprite:texture")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("21_y81r7")]
+}
+
+[sub_resource type="Animation" id="Animation_pavwn"]
+resource_name = "charge"
+length = 1.5
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("swordSprite:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.1, 1.2, 1.3, 1.4, 1.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("23_q13oh"), ExtResource("24_8lnqu"), ExtResource("25_cj208"), ExtResource("26_628oo"), ExtResource("27_1juc0"), ExtResource("28_ncypd"), ExtResource("29_r84ln"), ExtResource("30_6k54t"), ExtResource("31_i12fx"), ExtResource("32_ndkpg"), ExtResource("33_mlngk"), ExtResource("34_r2etg"), ExtResource("35_wde84"), ExtResource("36_yyo2q"), ExtResource("37_de21w"), ExtResource("38_dpy3j")]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_6o0ji"]
 _data = {
@@ -650,6 +745,7 @@ _data = {
 "charge1": SubResource("Animation_ig7gq"),
 "charge1Left": SubResource("Animation_noum6"),
 "charge2": SubResource("Animation_4uqqo"),
+"charge2Left": SubResource("Animation_pavwn"),
 "chargedAttack": SubResource("Animation_r7v4o"),
 "unchargedAttack": SubResource("Animation_dmfon"),
 "unchargedAttackLeft": SubResource("Animation_bn63b")
@@ -673,15 +769,15 @@ border_color = Color(0.0627451, 0.0745098, 0.137255, 1)
 position = Vector2(0, 30)
 script = ExtResource("1_fq8c6")
 
-[node name="sprite" type="Sprite2D" parent="."]
+[node name="swordSprite" type="Sprite2D" parent="."]
 visible = false
 position = Vector2(-20, -15)
 rotation = -1.5708
-texture = ExtResource("2_s3s2n")
+texture = ExtResource("2_jhp1r")
 
 [node name="unchargedSwordEffect" type="Sprite2D" parent="."]
 visible = false
-texture = ExtResource("3_ndekn")
+texture = ExtResource("3_uu22d")
 
 [node name="chargedSwordEffect" type="Sprite2D" parent="."]
 visible = false
